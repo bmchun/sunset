@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<title> css3 图片等比缩放，居中显示 </title>
+<style>
+.mysec{ 
+    width:400px;
+    height:200px;
+    border:solid 1px #ccc;
+    background-color:red;
+    background-image:url(../../img/1-jiating.jpg); /*图片地址*/
+    background-origin:content;                /*从content区域开始显示背景*/
+    background-position:50% 50%;              /*图片上下左右居中*/
+    background-size:contain;                  /*保持图像本身的宽高比例，将图片缩放到宽度或高度正好适应定义背景的区域*/
+    background-repeat:no-repeat;              /*图像不重复显示*/
+}
+</style>
+</head>
+<body>
+<section class="mysec"></section>
+</body>
+</html>

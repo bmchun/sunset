@@ -1,0 +1,37 @@
+<?php
+//用户基本信息接口
+require_once '../../models/Response.php';
+require_once '../..//models/UserProfile.php';
+$msg = new Response();
+if(isset($_GET['tel']))
+{
+	$tel = $_GET['tel'];
+	$uid = md5($tel);
+	$re = new UserProfile();
+	if(isset($_GET['password']))
+	{
+		$pwd =md5($_GET['password']);
+		$userinfo  = $re->checkAuth($uid, $pwd);
+		if($userinfo ==FALSE)
+			echo $msg->show('400');
+		else
+		{
+			$userinfo = $re->userinfo($uid);
+			$parentpercent = $re->parentpercent($uid);//父母信息完成比例
+			$likeNum = $re->likeNum($uid);//收藏个数
+			$data = array('userinfo'=>$userinfo,
+					'parentpercent'=>$parentpercent,
+					'likeNum'=>$likeNum);
+			echo $msg->show('200',$data);
+		}
+		exit;
+	}
+	$userinfo = $re->userinfo($uid);//个人信息
+	$parentpercent = $re->parentpercent($uid);//父母信息完成比例
+	$likeNum = $re->likeNum($uid);//收藏个数
+	$data = array('userinfo'=>$userinfo,
+						  'parentpercent'=>$parentpercent,
+						  'likeNum'=>$likeNum);
+	
+	echo $msg->show('200',$data);
+}

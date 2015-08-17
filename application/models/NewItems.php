@@ -1,0 +1,30 @@
+<?php
+require_once  'data/ItemInfo.php';
+//首页最新上架商品数据接口
+class NewItems{
+	
+	function __construct()
+    {
+		//
+    }
+
+	function newItems($pageId)
+	{
+		$itemsNum = 5; //控制次调用返回的数据数量
+		$from = $itemsNum * ($pageId - 1);
+		$to = $itemsNum * $pageId -1 ;
+		$limit = ' '.$from.','.$to.' ';// 每页5条数据
+		$orderby = '`itemDate` desc';
+		$re = ItemInfo::iteminfo_select_ordby(NULL,$orderby,$limit);
+
+		$data = array();
+		while($line = mysql_fetch_array($re,MYSQL_ASSOC))
+		{
+			$data[] = $line; 
+		}
+		return $data;
+	}
+
+}
+
+?>

@@ -1,0 +1,311 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/tuango/!svn/ver/318/100/application/third_party/top/request
+END
+OpenAccountTokenApplyRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/tuango/!svn/ver/318/100/application/third_party/top/request/OpenAccountTokenApplyRequest.php
+END
+ItemSkuAddRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/tuango/!svn/ver/318/100/application/third_party/top/request/ItemSkuAddRequest.php
+END
+CloudpushMessageIosRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/tuango/!svn/ver/318/100/application/third_party/top/request/CloudpushMessageIosRequest.php
+END
+AtbItemsDetailGetRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/tuango/!svn/ver/318/100/application/third_party/top/request/AtbItemsDetailGetRequest.php
+END
+ItemSkuUpdateRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/tuango/!svn/ver/318/100/application/third_party/top/request/ItemSkuUpdateRequest.php
+END
+ItemPropimgUploadRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/tuango/!svn/ver/318/100/application/third_party/top/request/ItemPropimgUploadRequest.php
+END
+OpenAccountDeleteRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/tuango/!svn/ver/318/100/application/third_party/top/request/OpenAccountDeleteRequest.php
+END
+ItemAddRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/tuango/!svn/ver/318/100/application/third_party/top/request/ItemAddRequest.php
+END
+OpenimRelationsGetRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/tuango/!svn/ver/318/100/application/third_party/top/request/OpenimRelationsGetRequest.php
+END
+ItemSkusGetRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/tuango/!svn/ver/318/100/application/third_party/top/request/ItemSkusGetRequest.php
+END
+BaichuanOpenaccountLoginbytokenRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/tuango/!svn/ver/318/100/application/third_party/top/request/BaichuanOpenaccountLoginbytokenRequest.php
+END
+CloudpushNoticeIosRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/tuango/!svn/ver/318/100/application/third_party/top/request/CloudpushNoticeIosRequest.php
+END
+OpenimIoscertProductionSetRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/tuango/!svn/ver/318/100/application/third_party/top/request/OpenimIoscertProductionSetRequest.php
+END
+OpenimUsersUpdateRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/tuango/!svn/ver/318/100/application/third_party/top/request/OpenimUsersUpdateRequest.php
+END
+OauthCodeCreateRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/tuango/!svn/ver/318/100/application/third_party/top/request/OauthCodeCreateRequest.php
+END
+OpenAccountCreateRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/tuango/!svn/ver/318/100/application/third_party/top/request/OpenAccountCreateRequest.php
+END
+ItemUpdateRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/tuango/!svn/ver/318/100/application/third_party/top/request/ItemUpdateRequest.php
+END
+OpenimUsersGetRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/tuango/!svn/ver/318/100/application/third_party/top/request/OpenimUsersGetRequest.php
+END
+OpenimCustmsgPushRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/tuango/!svn/ver/318/100/application/third_party/top/request/OpenimCustmsgPushRequest.php
+END
+ItemPropimgDeleteRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/tuango/!svn/ver/318/100/application/third_party/top/request/ItemPropimgDeleteRequest.php
+END
+BaichuanUserLoginbytokenRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/tuango/!svn/ver/318/100/application/third_party/top/request/BaichuanUserLoginbytokenRequest.php
+END
+CloudpushMessageAndroidRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/tuango/!svn/ver/318/100/application/third_party/top/request/CloudpushMessageAndroidRequest.php
+END
+ItemsGetRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/tuango/!svn/ver/318/100/application/third_party/top/request/ItemsGetRequest.php
+END
+BaichuanPayresultQueryRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/tuango/!svn/ver/318/100/application/third_party/top/request/BaichuanPayresultQueryRequest.php
+END
+ItemImgUploadRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/tuango/!svn/ver/318/100/application/third_party/top/request/ItemImgUploadRequest.php
+END
+AreasGetRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/tuango/!svn/ver/318/100/application/third_party/top/request/AreasGetRequest.php
+END
+ItemSkuGetRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/tuango/!svn/ver/318/100/application/third_party/top/request/ItemSkuGetRequest.php
+END
+OpenAccountUpdateRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/tuango/!svn/ver/318/100/application/third_party/top/request/OpenAccountUpdateRequest.php
+END
+OpenAccountTokenValidateRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/tuango/!svn/ver/318/100/application/third_party/top/request/OpenAccountTokenValidateRequest.php
+END
+BaichuanUserLogindoublecheckRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/tuango/!svn/ver/318/100/application/third_party/top/request/BaichuanUserLogindoublecheckRequest.php
+END
+BaichuanUserLoginRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/tuango/!svn/ver/318/100/application/third_party/top/request/BaichuanUserLoginRequest.php
+END
+OpenAccountSearchRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/tuango/!svn/ver/318/100/application/third_party/top/request/OpenAccountSearchRequest.php
+END
+CloudpushPushRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/tuango/!svn/ver/318/100/application/third_party/top/request/CloudpushPushRequest.php
+END
+TimeGetRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/tuango/!svn/ver/318/100/application/third_party/top/request/TimeGetRequest.php
+END
+ItemUpdateListingRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/tuango/!svn/ver/318/100/application/third_party/top/request/ItemUpdateListingRequest.php
+END
+CloudpushNoticeAndroidRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/tuango/!svn/ver/318/100/application/third_party/top/request/CloudpushNoticeAndroidRequest.php
+END
+ItemUpdateDelistingRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/tuango/!svn/ver/318/100/application/third_party/top/request/ItemUpdateDelistingRequest.php
+END
+OpenimUsersAddRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/tuango/!svn/ver/318/100/application/third_party/top/request/OpenimUsersAddRequest.php
+END
+MtopUploadTokenGetRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/tuango/!svn/ver/318/100/application/third_party/top/request/MtopUploadTokenGetRequest.php
+END
+ShopcatsListGetRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/tuango/!svn/ver/318/100/application/third_party/top/request/ShopcatsListGetRequest.php
+END
+OpenimUsersDeleteRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/tuango/!svn/ver/318/100/application/third_party/top/request/OpenimUsersDeleteRequest.php
+END
+ItemGetRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/tuango/!svn/ver/318/100/application/third_party/top/request/ItemGetRequest.php
+END
+BaichuanOrderurlGetRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/tuango/!svn/ver/318/100/application/third_party/top/request/BaichuanOrderurlGetRequest.php
+END
+OpenimChatlogsGetRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/tuango/!svn/ver/318/100/application/third_party/top/request/OpenimChatlogsGetRequest.php
+END
+OpenAccountListRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/tuango/!svn/ver/318/100/application/third_party/top/request/OpenAccountListRequest.php
+END
+TraderateListAddRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/tuango/!svn/ver/318/100/application/third_party/top/request/TraderateListAddRequest.php
+END
+OpenimIoscertSandboxSetRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/tuango/!svn/ver/318/100/application/third_party/top/request/OpenimIoscertSandboxSetRequest.php
+END
+TraderateAddRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/tuango/!svn/ver/318/100/application/third_party/top/request/TraderateAddRequest.php
+END
+BaichuanTaokeTraceRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/tuango/!svn/ver/318/100/application/third_party/top/request/BaichuanTaokeTraceRequest.php
+END
+DeliverySendRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/tuango/!svn/ver/318/100/application/third_party/top/request/DeliverySendRequest.php
+END
+ItemImgDeleteRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/tuango/!svn/ver/318/100/application/third_party/top/request/ItemImgDeleteRequest.php
+END

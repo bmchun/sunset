@@ -1,0 +1,14 @@
+[Product]
+host = localhost
+port = 3306
+user = root
+password =  
+dbname = sunset
+
+
+[Develop]
+host = localhost
+port = 3306
+user = root
+password = 123qwe
+dbname = sunset_dev

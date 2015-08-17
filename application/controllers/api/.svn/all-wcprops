@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/tuango/!svn/ver/318/100/application/controllers/api
+END
+parentinfo.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tuango/!svn/ver/318/100/application/controllers/api/parentinfo.php
+END
+userinfo.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/tuango/!svn/ver/318/100/application/controllers/api/userinfo.php
+END
+token.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/tuango/!svn/ver/318/100/application/controllers/api/token.php
+END
+log
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/tuango/!svn/ver/318/100/application/controllers/api/log
+END
+setuserinfo.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/tuango/!svn/ver/318/100/application/controllers/api/setuserinfo.php
+END
+recommend.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/tuango/!svn/ver/318/100/application/controllers/api/recommend.php
+END
+newitems.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/tuango/!svn/ver/318/100/application/controllers/api/newitems.php
+END
+presentnumber.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tuango/!svn/ver/318/100/application/controllers/api/presentnumber.php
+END
+search.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/tuango/!svn/ver/318/100/application/controllers/api/search.php
+END
+itemsprofile.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/tuango/!svn/ver/318/100/application/controllers/api/itemsprofile.php
+END
+changeimage.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/tuango/!svn/ver/318/100/application/controllers/api/changeimage.php
+END
+subject.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/tuango/!svn/ver/318/100/application/controllers/api/subject.php
+END
+recommendbyitems.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/tuango/!svn/ver/318/100/application/controllers/api/recommendbyitems.php
+END
+searchhotword.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tuango/!svn/ver/318/100/application/controllers/api/searchhotword.php
+END
+discovery.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/tuango/!svn/ver/318/100/application/controllers/api/discovery.php
+END
+discovery_new.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tuango/!svn/ver/318/100/application/controllers/api/discovery_new.php
+END
+addaddress.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tuango/!svn/ver/318/100/application/controllers/api/addaddress.php
+END

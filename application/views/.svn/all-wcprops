@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/tuango/!svn/ver/318/100/application/views
+END
+test.html
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/tuango/!svn/ver/318/100/application/views/test.html
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/tuango/!svn/ver/318/100/application/views/index.html
+END
+upload.html
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/tuango/!svn/ver/318/100/application/views/upload.html
+END
+.DS_Store
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/tuango/!svn/ver/318/100/application/views/.DS_Store
+END
