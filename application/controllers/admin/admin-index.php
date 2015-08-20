@@ -3,7 +3,7 @@ error_reporting(0);
 require_once('../../models/adminCheck.php');
 //var_dump($_POST);exit;
 require_once 'cookie.php';
-ck();
+ck();var_dump($_COOKIE);
 require_once 'header.php';
 ?>
 

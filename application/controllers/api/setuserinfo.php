@@ -40,7 +40,7 @@ if(isset($_POST['data']))
 					$re = $setUser->userinfo_update($arr, $condition);
 					if($re==1)
 						echo $res->show(200,mysql_fetch_assoc($setUser->userinfo_select($arr_select,1)));
-						else
+					else
 						echo $res->show(401);
 						exit;
 			}
@@ -80,8 +80,9 @@ if(isset($_POST['data']))
 	//第三方注册
 	elseif(isset($arr['usid']))
 	{
-		$re = $setUser->userinfo_insert($arr);
 		$arr_select = array('usid'=>$arr['usid']);
+		//$setUser->userinfo_select($arr_select,1);
+		$re = $setUser->userinfo_insert($arr);
 		if($re ==1)
 			echo $res->show(200,mysql_fetch_assoc($setUser->userinfo_select($arr_select,1)));
 		else

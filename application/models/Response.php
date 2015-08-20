@@ -40,6 +40,9 @@ class Response{
     		case 404:
     			$message =  'Missing token';
     			break;
+    		case 405:
+    			$message =  'User not exist';
+    			break;
     		case 500:
     			$message =  'Internal server error';
     			break;

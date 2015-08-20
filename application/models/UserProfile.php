@@ -32,6 +32,15 @@ class UserProfile {
 
 		return $selfinfo;
 	}
+	//获取第三方个人信息
+	function userinfo_3($usid,$tel=null)
+	{
+		$arr = isset($tel)?array("tel"=>$tel):array("usid"=>$usid);
+		$limit = 1;
+		$re = UserInfo::userinfo_select($arr,$limit);
+		$selfinfo = mysql_fetch_array($re,MYSQL_ASSOC);
+		return $selfinfo;
+	}
 
 	//获取父母信息
 	function parentinfo($uid)

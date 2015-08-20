@@ -36,5 +36,17 @@ if(isset($_GET['uid'])||$_GET['tel'])
 	echo $msg->show('200',$data);
 }
 else 
-	echo $msg->show(400);
-
+{
+	//第三方用户信息查询
+	if(isset($_GET['usid']))
+	{
+		$re = new UserProfile();
+		$userinfo = $re->userinfo_3($_GET['usid']);
+		if($userinfo)
+			echo $msg->show('200',$userinfo);
+		else 
+			echo $msg->show(405);
+	}
+	else
+		echo $msg->show(400);
+}
