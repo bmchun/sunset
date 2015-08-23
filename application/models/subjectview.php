@@ -11,6 +11,17 @@ class SubjectView{
 
 	function subject($pageId)
 	{
+		//后台使用
+		if($pageId == 'all')
+		{
+			$re = Subject::subject_select(NULL,0);
+			$data = array();
+			while($line = mysql_fetch_array($re,MYSQL_ASSOC))
+			{
+				$data[] = $line;
+			}
+			return $data;
+		}
 		$itemsNum = 4; //控制次调用返回的数据数量
 		$from = $itemsNum * ($pageId - 1);
 		$to = $itemsNum * $pageId ;

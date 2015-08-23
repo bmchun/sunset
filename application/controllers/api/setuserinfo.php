@@ -15,7 +15,7 @@ $res = new Response();
 if(isset($_POST['data']))
 {
 	$arr = $_POST['data'];
-	$arr_select = array('tel'=>$arr['tel']);
+	$arr_select = array('uid'=>$arr['uid']);
 	//$arr['uid'] = md5($arr['tel']);
 	$arr['password'] = md5($arr['password']);
 	$arr['registerDate'] = date("Y/m/d");
@@ -29,7 +29,7 @@ if(isset($_POST['data']))
 		$arr['age']=isset($arr['age'])?$arr['age']:0;
 		$arr['idCard']=isset($arr['idCard'])?$arr['idCard']:'';
 		$arr['realName']=isset($arr['realName'])?$arr['realName']:'';
-		$checkArr = array('tel'=>$arr['tel'],'password'=>$arr['password']);
+		$checkArr = array('uid'=>$arr['uid']);
 		//找回密码，要验证token
 		if(isset($arr['token']) )
 		{
@@ -50,7 +50,7 @@ if(isset($_POST['data']))
 			}
 			
 		}
-		//如果传输过来的用户密码验证OK，更新个人信息
+		//更新个人信息
 		$r = $setUser->userinfo_select($checkArr, 1);
 		if(!mysql_fetch_assoc($r))
 		{
@@ -80,6 +80,7 @@ if(isset($_POST['data']))
 	//第三方注册
 	elseif(isset($arr['usid']))
 	{
+		
 		$arr_select = array('usid'=>$arr['usid']);
 		//$setUser->userinfo_select($arr_select,1);
 		$re = $setUser->userinfo_insert($arr);

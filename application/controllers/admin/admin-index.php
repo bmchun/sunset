@@ -1,9 +1,10 @@
 <?php 
 error_reporting(0);
 require_once('../../models/adminCheck.php');
+require_once 'subject.php';
 //var_dump($_POST);exit;
 require_once 'cookie.php';
-ck();var_dump($_COOKIE);
+ck();
 require_once 'header.php';
 ?>
 
@@ -79,53 +80,18 @@ require_once 'header.php';
   <div class="admin-content">
 <?php
 	$_GET['id'] = isset($_GET['id'])?$_GET['id']:null; 
+	$arr = array();
+	
+	
 	switch ($_GET['id'])
 	{
 		case 1:	//专题管理
-			echo '<div class="admin-content">
-
-						    <div class="am-cf am-padding">
-						      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">专题</strong>
-						    </div>
-						
-						    <div class="am-g">
-						      <div class="am-u-sm-12 am-u-md-6">
-						        <div class="am-btn-toolbar">
-						          <div class="am-btn-group am-btn-group-xs">
-						            <button type="button" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</button>
-						            <button type="button" class="am-btn am-btn-default"><span class="am-icon-save"></span> 保存</button>
-						            <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
-						          </div>
-						        </div>
-						      </div>
-						      <div class="am-u-sm-12 am-u-md-3">
-						        <div class="am-input-group am-input-group-sm">
-						          <input type="text" class="am-form-field">
-						          <span class="am-input-group-btn">
-						            <button class="am-btn am-btn-default" type="button">搜索</button>
-						          </span>
-						        </div>
-						      </div>
-						    </div>
-							<div class="am-g">
-						      <div class="am-u-sm-12">
-						        <form class="am-form">
-						          <table class="am-table am-table-striped am-table-hover table-main">
-						            <thead>
-						              <tr>
-						                <th class="table-check"><input type="checkbox" /></th><th class="table-id">ID</th><th class="table-title">标题</th><th class="table-type">图片</th><th class="table-author am-hide-sm-only">URL</th><th class="table-date am-hide-sm-only">修改日期</th><th class="table-set">操作</th>
-						              </tr>
-						          </thead>';
-			
-			
+			echo $subject;
 			break;
-			
-		
 		default:
 				echo '<div class="am-cf am-padding">
       					<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">首页</strong> / <small>假数据，占坑</small></div>
 						    </div>
-									
 						    <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-center admin-content-list ">
 						      <li><a href="#" class="am-text-success"><span class="am-icon-btn am-icon-file-text"></span><br/>新增页面<br/>2300</a></li>
 						      <li><a href="#" class="am-text-warning"><span class="am-icon-btn am-icon-briefcase"></span><br/>成交订单<br/>308</a></li>

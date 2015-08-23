@@ -94,6 +94,7 @@ class UserProfile {
 	    		{
 	    			move_uploaded_file($file['file']["tmp_name"],$image_path.$file['file']["name"]);
 	    			$condition = 'uid='.$uid;
+	    			$_SERVER['HTTP_ORIGIN'] = isset($_SERVER['HTTP_ORIGIN'])?$_SERVER['HTTP_ORIGIN']:'http://120.25.250.200/';
 	    			$image_url_path = $_SERVER['HTTP_ORIGIN'].'/upload/';
 	    			$set = array('image'=>$image_url_path.$file['file']["name"]);
 	    			UserInfo::userinfo_update($set,$condition);

@@ -13,9 +13,10 @@ function ck()
 		else
 			header('Location: login.php');
 	}
-	elseif($_COOKIE['admin'])
-		header('Location: login.php');
 	else
-		header('Location: login.php');
+	{
+		if(!$_COOKIE['admin'])
+			header('Location: login.php');
+	}
 }
 ?>
