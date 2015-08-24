@@ -56,7 +56,8 @@ if(isset($_POST['data']))
 				$re = $setUser->userinfo_update($arr, $condition);
 				if($re==1)
 				{
-					echo $res->show(200,mysql_fetch_assoc($setUser->userinfo_select($arr_select,1)));exit;
+					$arr_select_tel = array('tel'=>$arr['tel']);
+					echo $res->show(200,mysql_fetch_assoc($setUser->userinfo_select($arr_select_tel,1)));exit;
 				}
 				else
 					echo $res->show(401);
