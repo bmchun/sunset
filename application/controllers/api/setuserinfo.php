@@ -30,28 +30,6 @@ if(isset($_POST['data']))
 		$arr['idCard']=isset($arr['idCard'])?$arr['idCard']:'';
 		$arr['realName']=isset($arr['realName'])?$arr['realName']:'';
 		$checkArr = array('uid'=>$arr['uid']);
-		//找回密码，要验证token
-		if(isset($arr['token']) )
-		{
-			$token = $arr['token'];
-			if(checkToken($arr['uid'],$token)==200)
-			{
-					unset($arr['token']);
-					$re = $setUser->userinfo_update($arr, $condition);
-					if($re==1)
-					{
-						echo $res->show(200,mysql_fetch_assoc($setUser->userinfo_select($arr_select,1)));exit;
-					}
-					else
-						echo $res->show(401);
-						exit;
-			}
-			else
-			{
-				echo $res->show(402);exit;
-			}
-			
-		}
 		//更新个人信息
 		$r = $setUser->userinfo_select($checkArr, 1);
 		if(!mysql_fetch_assoc($r))
@@ -68,6 +46,28 @@ if(isset($_POST['data']))
 	//不存在的用户，新创建
 	if(isset($arr['token']))
 	{
+		//找回密码，要验证token
+		if(isset($arr['tel']) )
+		{
+			$token = $arr['token'];
+			if(checkToken($arr['tel'],$token)==200)
+			{
+				unset($arr['token']);
+				$re = $setUser->userinfo_update($arr, $condition);
+				if($re==1)
+				{
+					echo $res->show(200,mysql_fetch_assoc($setUser->userinfo_select($arr_select,1)));exit;
+				}
+				else
+					echo $res->show(401);
+				exit;
+			}
+			else
+			{
+				echo $res->show(402);exit;
+			}
+				
+		}
 		$token = $arr['token'];
 		if(checkToken($arr['tel'],$token)==200)
 		{
