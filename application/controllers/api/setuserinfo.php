@@ -34,7 +34,7 @@ if(isset($_POST['data']))
 		if(isset($arr['token']) )
 		{
 			$token = $arr['token'];
-			if(checkToken($arr['tel'],$token)==200)
+			if(checkToken($arr['uid'],$token)==200)
 			{
 					unset($arr['token']);
 					$re = $setUser->userinfo_update($arr, $condition);
@@ -70,9 +70,12 @@ if(isset($_POST['data']))
 		if(checkToken($arr['tel'],$token)==200)
 		{
 			unset($arr['token']);
+			$arr_select = array('tel'=>$arr['tel']);
 			$re = $setUser->userinfo_insert($arr);
 			if($re ==1)
 				echo $res->show(200,mysql_fetch_assoc($setUser->userinfo_select($arr_select,1)));
+			else 
+				echo $re->show(500);
 		}
 		else
 			echo $res->show(402);
