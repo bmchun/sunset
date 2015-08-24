@@ -85,8 +85,9 @@ if(isset($_POST['data']))
 		}
 		else //如果用户不存在，创建新用户
 		{
-			$re = $setUser->userinfo_insert($arr);
-			if(mysql_fetch_array($re))
+			$setUser->userinfo_insert($arr);
+			
+			if(mysql_fetch_assoc($setUser->userinfo_select($arr_select,1)))
 				echo $res->show(200,mysql_fetch_assoc($setUser->userinfo_select($arr_select,1)));
 			else
 				echo $res->show(401);
