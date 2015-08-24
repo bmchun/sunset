@@ -22,7 +22,7 @@ if(isset($_POST['data']))
 	$condition = isset($arr['tel'])?('tel=\''.$arr['tel'].'\''):('uid=\''.$arr['uid'].'\'');
 	$setUser = new UserInfo();
 	$re_select = $setUser->userinfo_select($arr_select,1);
-	//如果已经存在的用户，更新资料
+	//uid如果已经存在的用户，更新资料
 	if(mysql_fetch_row($re_select))
 	{
 		$arr['gender']=isset($arr['gender'])?$arr['gender']:0;
@@ -53,10 +53,14 @@ if(isset($_POST['data']))
 			if(checkToken($arr['tel'],$token)==200)
 			{
 				unset($arr['token']);
-				$re = $setUser->userinfo_update($arr, $condition);
+				$arr_select_tel = array('tel'=>$arr['tel']);
+				if($setUser->userinfo_select($arr_select_tel,1))
+					$re = $setUser->userinfo_update($arr, $condition);
+				else
+						$re = $setUser->userinfo_insert($arr);
 				if($re==1)
 				{
-					$arr_select_tel = array('tel'=>$arr['tel']);
+					
 					echo $res->show(200,mysql_fetch_assoc($setUser->userinfo_select($arr_select_tel,1)));exit;
 				}
 				else
@@ -69,19 +73,6 @@ if(isset($_POST['data']))
 			}
 				
 		}
-		$token = $arr['token'];
-		if(checkToken($arr['tel'],$token)==200)
-		{
-			unset($arr['token']);
-			$arr_select = array('tel'=>$arr['tel']);
-			$re = $setUser->userinfo_insert($arr);
-			if($re ==1)
-				echo $res->show(200,mysql_fetch_assoc($setUser->userinfo_select($arr_select,1)));
-			else 
-				echo $re->show(500);
-		}
-		else
-			echo $res->show(402);
 	}
 	//第三方注册
 	elseif(isset($arr['usid']))
