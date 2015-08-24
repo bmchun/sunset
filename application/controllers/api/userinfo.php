@@ -29,7 +29,7 @@ if(isset($_GET['uid'])||$_GET['tel'])
 	$userinfo = $re->userinfo($uid);//个人信息
 	if(!$userinfo)
 	{
-		echo $msg->show(405);
+		echo $msg->show(405);exit;
 	}
 	$parentpercent = $re->parentpercent($uid);//父母信息完成比例
 	$likeNum = $re->likeNum($uid);//收藏个数
