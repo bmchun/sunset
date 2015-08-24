@@ -39,7 +39,9 @@ if(isset($_POST['data']))
 					unset($arr['token']);
 					$re = $setUser->userinfo_update($arr, $condition);
 					if($re==1)
-						echo $res->show(200,mysql_fetch_assoc($setUser->userinfo_select($arr_select,1)));
+					{
+						echo $res->show(200,mysql_fetch_assoc($setUser->userinfo_select($arr_select,1)));exit;
+					}
 					else
 						echo $res->show(401);
 						exit;
@@ -86,7 +88,7 @@ if(isset($_POST['data']))
 		$arr['nickname'] = $arr['userName'];
 		$arr_select = array('usid'=>$arr['usid']);
 		//如果用户已经存在，返回用户基本信息
-		if($setUser->userinfo_select($arr_select,1) && !isset($arr['uid']))
+		if($setUser->userinfo_select($arr_select,1))
 		{
 			echo $res->show(200,mysql_fetch_assoc($setUser->userinfo_select($arr_select,1)));exit;
 		}
