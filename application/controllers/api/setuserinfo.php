@@ -80,7 +80,7 @@ if(isset($_POST['data']))
 	//第三方注册
 	elseif(isset($arr['usid']))
 	{
-		
+		$arr['nickname'] = $arr['userName'];
 		$arr_select = array('usid'=>$arr['usid']);
 		//$setUser->userinfo_select($arr_select,1);
 		$re = $setUser->userinfo_insert($arr);
