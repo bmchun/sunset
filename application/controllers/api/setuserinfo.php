@@ -77,6 +77,7 @@ if(isset($_POST['data']))
 	elseif(isset($arr['usid']))
 	{
 		$arr['nickname'] = $arr['userName'];
+		$arr['image'] = $arr['iconURL'];
 		$arr_select = array('usid'=>$arr['usid']);
 		//如果用户已经存在，返回用户基本信息
 		if(mysql_fetch_array($setUser->userinfo_select($arr_select,1)))
