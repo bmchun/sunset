@@ -6,7 +6,7 @@ require_once 'token.php';
 $debug = 1;//打印日志开关
 if($debug)
 {
-	$fp = fopen('./log','w+');
+	$fp = fopen('./log','a+');
 	fwrite($fp,json_encode($_POST)."\n");
 	fclose($fp);
 }
@@ -63,7 +63,7 @@ if(isset($_POST['data']))
 					echo $res->show(200,mysql_fetch_assoc($setUser->userinfo_select($arr_select_tel,1)));exit;
 				}
 				else
-					echo $res->show(401);
+					echo $res->show(400);
 				exit;
 			}
 			else
@@ -85,12 +85,11 @@ if(isset($_POST['data']))
 		}
 		else //如果用户不存在，创建新用户
 		{
-			$setUser->userinfo_insert($arr);
-			
-			if(mysql_fetch_assoc($setUser->userinfo_select($arr_select,1)))
+			$re = $setUser->userinfo_insert($arr);
+			if($re)
 				echo $res->show(200,mysql_fetch_assoc($setUser->userinfo_select($arr_select,1)));
 			else
-				echo $res->show(401);
+				echo $res->show(400);
 		}
 	}
 	else 
