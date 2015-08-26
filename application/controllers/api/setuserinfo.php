@@ -4,9 +4,9 @@ require_once '../../models/Response.php';
 require_once 'token.php';
 
 $debug = 1;//打印日志开关
+$fp = fopen('./log','a+');
 if($debug)
 {
-	$fp = fopen('./log','a+');
 	fwrite($fp,json_encode($_POST)."\n");
 	fclose($fp);
 }

@@ -152,7 +152,6 @@ class DbConn {
 		}
 		else
 			throw new Exception("Insert table values is missing!", 1);
-		echo $str;
 		return $str;
 	}
 
