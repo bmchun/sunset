@@ -7,8 +7,9 @@ $style = new Response();
 if($_GET['page'])
 {
 	$pageId = $_GET['page'];
+	$itemNum = isset($_GET['itemNum'])?$_GET['itemNum']:null;
 	$rec = new NewItems();
-	$data = $rec->newItems($pageId);
+	$data = $rec->newItems($pageId,$itemNum);
 	$res = new Response();
 	echo $res->show('200',$data);
 }

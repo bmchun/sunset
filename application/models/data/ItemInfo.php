@@ -14,6 +14,15 @@ class ItemInfo {
 		return mysql_query($str,$this->con);
 	}
 	
+	function itemInfo_count($arr=null)
+	{
+		$str = DbConn::table_select_count('iteminfo',$arr);
+		$this->con = DbConn::initDb();
+		$re = mysql_query($str,$this->con);
+		$data = mysql_fetch_array($re);
+		return  $data[0];
+	}
+	
 	function iteminfo_select_like($string,$limit)
 	{
 		$str = DbConn::table_like_select('iteminfo',$string,$limit);

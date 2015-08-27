@@ -21,7 +21,6 @@ class ParentInfo
 	{
 		$str = DbConn::table_insert('parentinfo',$arr);
 		$this->con = DbConn::initDb();
-		echo $str;
 		return mysql_query($str,$this->con);
 	}
 

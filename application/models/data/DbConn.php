@@ -124,7 +124,7 @@ class DbConn {
 			$str = 'SELECT COUNT(*) FROM `'.$table.'` WHERE '.$string.' ;';
 		}
 		else
-			$str = $str = 'SELECT COUNT(*) FROM `'.$table.';';
+			$str = $str = 'SELECT COUNT(*) FROM `'.$table.'`;';
 		return $str;
 	}
 	

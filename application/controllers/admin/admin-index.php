@@ -1,7 +1,9 @@
 <?php 
-error_reporting(0);
+//error_reporting(0);
 require_once('../../models/adminCheck.php');
 require_once 'subject.php';
+require_once 'items.php';
+require_once 'hotkey.php';
 //var_dump($_POST);exit;
 require_once 'cookie.php';
 ck();
@@ -48,8 +50,8 @@ require_once 'header.php';
           <a class="am-cf" data-am-collapse="{target: '#collapse-nav'}"><span class="am-icon-file"></span> 功能 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
           <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav">
             <li><a href="?id=1"><span class="am-icon-th"></span> 专题</a></li>
-            <li><a href="admin-log.html"><span class="am-icon-pencil-square-o"></span> 商品维护</a></li>
-            <li><a href="admin-log.html"><span class="am-icon-check"></span> 热词维护</a></li>
+            <li><a href="?id=2"><span class="am-icon-pencil-square-o"></span> 商品</a></li>
+            <li><a href="?id=3"><span class="am-icon-check"></span> 热词维护</a></li>
             <li><a href="admin-log.html"><span class="am-icon-calendar"></span> 用户信息</a></li>
             <li><a href="admin-log.html"><span class="am-icon-puzzle-piece"></span> 第三方短信平台</a></li>
             <!-- 
@@ -81,12 +83,16 @@ require_once 'header.php';
 <?php
 	$_GET['id'] = isset($_GET['id'])?$_GET['id']:null; 
 	$arr = array();
-	
-	
 	switch ($_GET['id'])
 	{
 		case 1:	//专题管理
 			echo $subject;
+			break;
+		case 2:	//商品管理
+			echo $items;
+			break;
+		case 3:	//商品管理
+			echo $hotkey;
 			break;
 		default:
 				echo '<div class="am-cf am-padding">

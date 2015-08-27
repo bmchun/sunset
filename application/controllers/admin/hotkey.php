@@ -1,9 +1,10 @@
 <?php
+//热词
 require_once 'curl.php';
 //头
-$subject = '<div class="admin-content">
+$hotkey = '<div class="admin-content">
 						    <div class="am-cf am-padding">
-						      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">专题</strong>
+						      <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">热词</strong>
 						    </div>
 						    <div class="am-g">
 						      <div class="am-u-sm-12 am-u-md-6">
@@ -24,28 +25,27 @@ $subject = '<div class="admin-content">
 						              <tr>
 						                <th class="table-check"><input type="checkbox" /></th>
 										<th class="table-id">ID</th>
-										<th class="table-title">标题</th>
-										<th class="table-date am-hide-sm-only">修改日期</th>
+										<th class="table-title">热词</th>
 										<th class="table-set">操作</th>
 						              </tr>
 						          </thead>
 								<tbody>';
 //内容区
 if($_SERVER['HTTP_HOST']=='localhost')
-	$uri = 'http://localhost//sunset/application/controllers/api/subject.php?page=all';
+	$uri = 'http://localhost/sunset/application/controllers/api/searchhotword.php';
 else
-	$uri = '120.25.250.200/application/controllers/api/subject.php?page=all';
+	$uri = '120.25.250.200/application/controllers/api/searchhotword.php';
 $re = getFn($uri);
 $r = json_decode($re,TRUE);
-$data = $r['data'];
 $h= null;
-foreach($data as $key=>$value)
+foreach($r['data'] as $key=>$value)
 {
+	$id = $value['id'];
+	$keyword = $value['keyword'];
 	$h .= '<tr>
 						              <td><input type="checkbox" /></td>
-						              <td>'.$value['id'].'</td>
-						              <td><a href="'.$value['subjectURL'].'">'.$value['subjectName'].'</a></td>
-						              <td class="am-hide-sm-only">'.$value['subjectTime'].'</td>
+						              <td>'.$id.'</td>
+						              <td>'.$keyword.'</td>
 						              <td>
 						                <div class="am-btn-toolbar">
 						                  <div class="am-btn-group am-btn-group-xs">
@@ -57,8 +57,8 @@ foreach($data as $key=>$value)
 						              </td>
 						            </tr>';
 }
-$subject.= $h;
+$hotkey.= $h;
 //尾
-$subject.='</tbody>
+$hotkey.='</tbody>
 						        </table>';
 ?>
