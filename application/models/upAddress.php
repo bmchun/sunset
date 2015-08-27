@@ -35,7 +35,7 @@ class UpAddress {
 			{
 				$data['childID'] = $uid ;
 				$data['isMum'] = $isMum ;
-				$condition = '`childID`='.$uid;
+				$condition = '`childID`='.$uid.' AND `isMum`='.$isMum;
 				$re = ParentInfo::parentinfo_update($data,$condition);
 				if($re)
 					return mysql_fetch_array(ParentInfo::parentinfo_select($arr,1),MYSQL_ASSOC);
