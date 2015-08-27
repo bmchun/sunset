@@ -14,7 +14,6 @@ class ParentInfo
 	{
 		$str = DbConn::table_select('parentinfo',$arr,$limit);
 		$this->con = DbConn::initDb();
-		echo $str;
 		return mysql_query($str,$this->con);
 	}
 
