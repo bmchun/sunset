@@ -41,7 +41,7 @@ $pageid = isset($_GET['pageid'])?$_GET['pageid']:1;
 if($_SERVER['HTTP_HOST']=='localhost')
 	$uri = 'http://localhost/sunset/application/controllers/api/newitems.php?page='.$pageid.'&itemNum=11';
 else
-	$uri = '120.25.250.200/application/controllers/api/subject.php?page=all';
+	$uri = '120.25.250.200/application/controllers/api/newitems.php?page='.$pageid.'&itemNum=11';
 $re = getFn($uri);
 $r = json_decode($re,TRUE);
 $data = $r['data'];
