@@ -60,7 +60,7 @@ class UserProfile {
 	//固定行信息为2个，全部填写的信息为5。
 	function percent($arr = array())
 	{
-		return (count($arr) - 2 > 0)?((count($arr) - 2) / 5 * 100) : 0;
+		return (count($arr) - 2 > 0)?((count($arr) - 2) / 9 * 100) : 0;
 	}
 	
 	function parentpercent($uid)
