@@ -57,10 +57,16 @@ class UserProfile {
 	}
 
 	//父母信息完成度计算方法
-	//固定行信息为2个，全部填写的信息为8。
+	//固定行信息为3个，全部填写的信息为7。
 	function percent($arr = array())
 	{
-		return (count($arr) - 2 > 0)?floor(((count($arr) - 2) / 8 * 100)) : 0;
+		$cot =0;
+		foreach($arr as $key =>$value)
+		{
+			if($value!=null)
+				$cot++;
+		}		
+		return (count($arr) - 3 > 0)?floor((($cot-3)/ 7 * 100)) : 0;
 	}
 	
 	function parentpercent($uid)
