@@ -31,7 +31,7 @@ class UpAddress {
 		}
 		else//更新父母
 		{
-			if(mysql_fetch_array(ParentInfo::parentinfo_select($arr,1)))
+			if(ParentInfo::parentinfo_select_affect($arr,1))
 			{
 				$data['childID'] = $uid ;
 				$data['isMum'] = $isMum ;

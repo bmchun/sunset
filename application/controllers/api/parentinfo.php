@@ -7,7 +7,7 @@ if(isset($_GET['uid']))
 	$uid = $_GET['uid'];
 	$arr = array('childID'=>$uid);
 	$re = new ParentInfo();
-	$userinfo = $re->parentinfo_select($arr, 2);//个人信息
+	$userinfo = $re->parentinfo_select($arr, 5);//个人信息
 	$data = array();
 	$r = '';
 	while($r = mysql_fetch_assoc($userinfo))
