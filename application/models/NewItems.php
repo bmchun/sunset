@@ -10,9 +10,9 @@ class NewItems{
 
 	function newItems($pageId,$itemNum=null)
 	{
-		$itemsNum = isset($itemNum)?$itemNum:5; //控制次调用返回的数据数量
+		$itemsNum = isset($itemNum)?$itemNum:4; //控制次调用返回的数据数量
 		$from = $itemsNum * ($pageId - 1);
-		$to = $itemsNum * $pageId -1 ;
+		$to = $itemsNum ;
 		$limit = ' '.$from.','.$to.' ';// 每页5条数据
 		$orderby = '`itemDate` desc';
 		$re = ItemInfo::iteminfo_select_ordby(NULL,$orderby,$limit);
