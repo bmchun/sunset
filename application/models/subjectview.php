@@ -23,8 +23,8 @@ class SubjectView{
 			return $data;
 		}
 		$itemsNum = 4; //控制次调用返回的数据数量
-		$from = $itemsNum * ($pageId - 1);
-		$to = $itemsNum * $pageId ;
+		$from = ($pageId-1)*$itemsNum;
+		$to = $itemsNum;
 		$limit = ' '.$from.','.$to.' ';// 每页5条数据
 		$orderby = '`subjectTime` desc';
 		$re = Subject::subject_select_ordby(NULL,$orderby,$limit);
