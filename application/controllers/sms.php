@@ -65,7 +65,6 @@ class Sms
 	}
 	function postFn($data,$uri)
 	{
-		
 		$ch = curl_init ();
 		curl_setopt ( $ch, CURLOPT_URL, $uri );
 		curl_setopt ( $ch, CURLOPT_POST, 1 );

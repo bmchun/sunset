@@ -11,6 +11,7 @@ class ItemInfo {
 	{
 		$str = DbConn::table_select('iteminfo',$arr,$limit);
 		$this->con = DbConn::initDb();
+		var_dump($str);exit;
 		return mysql_query($str,$this->con);
 	}
 	
@@ -26,6 +27,13 @@ class ItemInfo {
 	function iteminfo_select_like($string,$limit)
 	{
 		$str = DbConn::table_like_select('iteminfo',$string,$limit);
+		$this->con = DbConn::initDb();
+		return mysql_query($str,$this->con);
+	}
+	
+	function iteminfo_select_key($key,$string,$limit)
+	{
+		$str = DbConn::table_key_select('iteminfo',$key,$string,$limit);
 		$this->con = DbConn::initDb();
 		return mysql_query($str,$this->con);
 	}
@@ -54,7 +62,7 @@ class ItemInfo {
 
 	function iteminfo_update($arr,$condition)
 	{
-		$str = DbConn::table_insert('iteminfo',$arr,$condition);
+		$str = DbConn::table_update('iteminfo',$arr,$condition);
 		$this->con = DbConn::initDb();
 		return mysql_query($str,$this->con);
 	}

@@ -214,6 +214,13 @@ class DbConn {
 		$str = 'SELECT * FROM `'.$table.'` where '.$string.' LIMIT '.$limit.';';
 		return $str;
 	}
+	
+	//查询局部字段
+	function table_key_select($table,$key,$string,$limit=1)
+	{
+		$str = 'SELECT '.$key.' FROM `'.$table.'` where '.$string.' LIMIT '.$limit.';';
+		return $str;
+	}
 }
 
 ?>
