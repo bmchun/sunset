@@ -13,12 +13,12 @@ class Discovery{
 	{
 		$itemsNum = 4; //控制次调用返回的数据数量
 		$from = $itemsNum * ($pageId - 1);
-		$to = $itemsNum * $pageId -1 ;
+		$to = $itemsNum;
 		$limit = ' '.$from.','.$to.' ';// 每页5条数据
 		if($gender == NULL)
 		{
 			$arr = array("isRecommend"=>1);
-			$orderby = 'itemDate';
+			$orderby = 'id';
 			$re = ItemInfo::iteminfo_select_ordby($arr,$orderby,$limit);
 			
 			$data = array();
