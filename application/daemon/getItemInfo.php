@@ -32,7 +32,8 @@ if(!is_null($re))
 	{
 		$arr = array('tb_id'=>$value['open_iid'],
 							'itemPic'=>$value['pic_url'],
-							'itemPrice' =>$value['price'],
+							'itemDiscount' =>$value['price'],
+							'itemPrice' =>$value['reserve_price'],
 							'describe'=>$value['title']
 				);
 		$limit = 'id = '.$value['open_id'];
