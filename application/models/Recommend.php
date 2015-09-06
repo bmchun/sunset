@@ -11,9 +11,9 @@ class Recommend{
 // uid 用户ID
 	function recommend($pageId,$uid=null)
 	{
-		$itemsNum = 5; //控制次调用返回的数据数量$itemsNum-1个
+		$itemsNum = 4; //控制次调用返回的数据数量$itemsNum-1个
 		$from = $itemsNum * ($pageId - 1);
-		$to = $itemsNum * $pageId -1 ;
+		$to = $itemsNum ;
 		$limit = ' '.$from.','.$to.' ';// 每页4条数据
 		if(isset($uid))
 		{
