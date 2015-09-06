@@ -11,7 +11,7 @@ class Search {
 	}
 	function search($key,$uid)
 	{
-		$string = "`itemName` LIKE '%$key%'";
+		$string = "`describe` LIKE '%$key%'";
 		$re = new ItemInfo();
 		$data = $re->iteminfo_select_like($string, 4);
 		return $data;
