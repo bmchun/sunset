@@ -19,7 +19,8 @@ class Recommend{
 		{
 			$items = UserLikeModel::getUserItems($uid);
 			$arr = array('isRecommend'=>1);
-			$re = ItemInfo::iteminfo_select($arr,$limit);
+			$orderby = '`itemPic desc`';
+			$re = ItemInfo::iteminfo_select_ordby($arr,$orderby,$limit);
 			$data = array();
 			while($line = mysql_fetch_array($re,MYSQL_ASSOC))
 			{
@@ -34,7 +35,8 @@ class Recommend{
 		else 
 		{
 			$arr = array('isRecommend'=>1);
-			$re = ItemInfo::iteminfo_select($arr,$limit);
+			$orderby = '`itemPic desc`';
+			$re = ItemInfo::iteminfo_select_ordby($arr,$orderby,$limit);
 			$data = array();
 			while($line = mysql_fetch_array($re,MYSQL_ASSOC))
 			{
