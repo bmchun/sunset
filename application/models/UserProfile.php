@@ -29,7 +29,17 @@ class UserProfile {
 		$limit = 1;
 		$re = UserInfo::userinfo_select($arr,$limit);
 		$selfinfo = mysql_fetch_array($re,MYSQL_ASSOC);
-
+		$a = array('nickname','image','gender','provice');
+		$count = 0;
+		foreach($selfinfo as $key => $value)
+		{
+			if(in_array($key,$a))
+			{
+					if(isset($value))
+						$count++;
+			}
+		}
+		$selfinfo['percent'] = floor($count/4 *100);
 		return $selfinfo;
 	}
 	//获取第三方个人信息

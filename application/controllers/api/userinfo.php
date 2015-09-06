@@ -7,11 +7,11 @@ if(isset($_GET['uid'])||$_GET['tel'])
 {
 	$uid =$_GET['uid'];
 	$re = new UserProfile();
-	if(isset($_GET['password'])&&isset($_GET['tel']))//登录验证密码
+	if(isset($_GET['password'])&&isset($_GET['tel']))
 	{
 		$tel = $_GET['tel'];
 		$pwd =md5($_GET['password']);
-		$userinfo  = $re->checkAuth($tel, $pwd);
+		$userinfo  = $re->checkAuth($tel, $pwd);//登录验证密码
 		if($userinfo ==FALSE)
 			echo $msg->show('400');
 		else
