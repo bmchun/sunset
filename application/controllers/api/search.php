@@ -8,9 +8,9 @@ if($_GET['key'])
 {
 	$data = array();
 	$uid = isset($_GET['uid'])?$_GET['uid']:null;
-	//$pageId = isset($_GET['pageId'])?$_GET['pageId']:1;
+	$page = isset($_GET['page'])?$_GET['page']:1;
 	$search= new Search();
-	$re =  $search->search($_GET['key'], $uid);	
+	$re =  $search->search($_GET['key'], $page,$uid);	
 	while($line = mysql_fetch_array($re,MYSQL_ASSOC))
 	{
 		$data[] = $line;
