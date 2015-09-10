@@ -1,5 +1,6 @@
 <?php
 require_once  'data/ItemInfo.php';
+require_once 'UserLike.php';
 //发现页面
 class Discovery{
 	

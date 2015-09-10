@@ -15,6 +15,14 @@ class UserLike
 		$this->con = DbConn::initDb();
 		return mysql_query($str,$this->con);
 	}
+	
+	function userlike_sum($id)
+	{
+		$string = '`items` like "%'.$id.'%"';
+		$str = DbConn::table_select_like_sum('userlike',$string);
+		$this->con = DbConn::initDb();
+		return mysql_query($str,$this->con);
+	}
 
 	function userlike_insert($arr)
 	{

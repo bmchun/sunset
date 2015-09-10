@@ -68,7 +68,16 @@ class DbConn {
 		//echo $str;
 		return $str;
 	}
+	/*
+	 *  查询获取喜欢总数
+	 */
 
+	function table_select_like_sum($table,$string)
+	{
+				$str = 'SELECT count(*)  FROM `'.$table.'` where '.$string;
+				return $str;
+	}
+	
 	/*
 	 	查询排序方法
 	 	$table 表名

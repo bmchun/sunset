@@ -1,5 +1,6 @@
 <?php
 require_once  'data/KeyWord.php';
+
 //热词列表展示接口
 class HotKeys {
 	
