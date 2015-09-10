@@ -3,6 +3,7 @@
 require_once '../../models/Response.php';
 require_once '../..//models/UserProfile.php';
 $msg = new Response();
+$page = isset($_GET['page'])?$_GET['page']:null;
 if(isset($_GET['uid'])||$_GET['tel'])
 {
 	$uid =$_GET['uid'];
@@ -26,7 +27,7 @@ if(isset($_GET['uid'])||$_GET['tel'])
 		}
 		exit;
 	} 
-	$userinfo = $re->userinfo($uid);//个人信息
+	$userinfo = $re->userinfo($uid,null,$page);//个人信息
 	if(!$userinfo)
 	{
 		echo $msg->show(405);exit;

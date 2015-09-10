@@ -9,8 +9,33 @@ $subject = '<div class="admin-content">
 						      <div class="am-u-sm-12 am-u-md-6">
 						        <div class="am-btn-toolbar">
 						          <div class="am-btn-group am-btn-group-xs">
-						            <button type="button" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</button>
-						            <button type="button" class="am-btn am-btn-default"><span class="am-icon-save"></span> 保存</button>
+						            <button type="button" class="am-btn am-btn-success" id="subject"><span class="am-icon-plus"></span> 新增</button>
+						            <div class="am-modal am-modal-prompt" tabindex="-1" id="createSubject">
+									  <div class="am-modal-dialog">
+											<div class="am-modal-bd">
+											<form action="../controllers/api/subjectAdd.php" enctype="multipart/form-data"  method="post">
+ 												 <div >name: <input type="text" name="subjectName" /></div>
+  												 <div >url: <input type="text" name="subjectUrl" /></div>
+  												<div > Image: <input type="file" name="subjectImage" /></div>
+  												<input type="submit" value="Submit" />
+											</form>
+											</div>
+									  </div>
+									</div>
+							<script>
+								$("#subject").on("click",function(){
+								  $("#createSubject").modal({
+									relatedTarget: this,
+									onConfirm: function sub(e) {
+										alert("你输入的是：" + e.data || "");
+									},
+									onCancel: function(e) {
+										//alert("不想说!");
+									}
+									});
+								});
+							</script>
+									<button type="button" class="am-btn am-btn-default"><span class="am-icon-save"></span> 保存</button>
 						            <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
 						          </div>
 						        </div>

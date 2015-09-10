@@ -14,7 +14,7 @@ class Discovery{
 		$itemsNum = 4; //控制次调用返回的数据数量
 		$from = $itemsNum * ($pageId - 1);
 		$to = $itemsNum;
-		$limit = ' '.$from.','.$to.' ';// 每页5条数据
+		$limit = ' '.$from.','.$to.' ';// 每页4条数据
 		if($gender == NULL)
 		{
 			$arr = array("isRecommend"=>1);

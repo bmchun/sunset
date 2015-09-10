@@ -4,6 +4,7 @@ require_once('../../models/adminCheck.php');
 require_once 'subject.php';
 require_once 'items.php';
 require_once 'hotkey.php';
+require_once 'userinfo.php';
 //var_dump($_POST);exit;
 require_once 'cookie.php';
 ck();
@@ -52,7 +53,7 @@ require_once 'header.php';
             <li><a href="?id=1"><span class="am-icon-th"></span> 专题</a></li>
             <li><a href="?id=2"><span class="am-icon-pencil-square-o"></span> 商品</a></li>
             <li><a href="?id=3"><span class="am-icon-check"></span> 热词维护</a></li>
-            <li><a href="admin-log.html"><span class="am-icon-calendar"></span> 用户信息</a></li>
+            <li><a href="?id=4"><span class="am-icon-calendar"></span> 用户信息</a></li>
             <li><a href="admin-log.html"><span class="am-icon-puzzle-piece"></span> 第三方短信平台</a></li>
             <!-- 
             <li><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span> 修改密码<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
@@ -93,6 +94,9 @@ require_once 'header.php';
 			break;
 		case 3:	//商品管理
 			echo $hotkey;
+			break;
+		case 4:	//用户信息管理
+			echo $userinfo;
 			break;
 		default:
 				echo '<div class="am-cf am-padding">
@@ -190,8 +194,7 @@ require_once 'header.php';
     </div> -->
   </div>
   <!-- content end -->
-
-</div>
+	</div>
 
 <a href="#" class="am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}">
   <span class="am-icon-btn am-icon-th-list"></span>
@@ -202,16 +205,5 @@ require_once 'header.php';
   <p class="am-padding-left">Copyright © 2015 NuanBuy.com 暖暖购物 京ICP备15039252号</p>
 </footer>
 
-<!--[if lt IE 9]>
-<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
-<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
-<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
-<![endif]-->
-
-<!--[if (gte IE 9)|!(IE)]><!-->
-<script src="assets/js/jquery.min.js"></script>
-<!--<![endif]-->
-<script src="assets/js/amazeui.min.js"></script>
-<script src="assets/js/app.js"></script>
 </body>
 </html>

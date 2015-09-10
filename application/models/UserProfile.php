@@ -23,24 +23,42 @@ class UserProfile {
     			return false;
     }
 	//获取个人信息
-	function userinfo($uid,$tel=null)
+	function userinfo($uid,$tel=null,$page=null)
 	{
-		$arr = isset($tel)?array("tel"=>$tel):array("uid"=>$uid);
-		$limit = 1;
-		$re = UserInfo::userinfo_select($arr,$limit);
-		$selfinfo = mysql_fetch_array($re,MYSQL_ASSOC);
-		$a = array('nickname','image','gender','provice');
-		$count = 0;
-		foreach($selfinfo as $key => $value)
+		if(-1==$uid && !is_null($page))
 		{
-			if(in_array($key,$a))
+			$limit =null;
+			$arr = array(1=>1);
+			$limit = ($page-1)*10;
+			$limit .= ',10';
+			$re = UserInfo::userinfo_orderby_select('`uid`',$limit);
+			$a = array();
+				while($selfinfo = mysql_fetch_array($re,MYSQL_ASSOC))
+				{
+					$a[] = $selfinfo;
+				}
+			return $a;		
+			}
+		else
+		{
+			$arr = isset($tel)?array("tel"=>$tel):array("uid"=>$uid);
+			$limit = 1;
+			$re = UserInfo::userinfo_select($arr,$limit);
+			$selfinfo = mysql_fetch_array($re,MYSQL_ASSOC);
+			$a = array('nickname','image','gender','provice');
+			$count = 0;
+			foreach($selfinfo as $key => $value)
 			{
+				if(in_array($key,$a))
+				{
 					if(isset($value))
 						$count++;
+				}
 			}
+			$selfinfo['percent'] = floor($count/4 *100);
+			return $selfinfo;
 		}
-		$selfinfo['percent'] = floor($count/4 *100);
-		return $selfinfo;
+		
 	}
 	//获取第三方个人信息
 	function userinfo_3($usid,$tel=null)
@@ -140,7 +158,7 @@ class UserProfile {
 		$data = $re->userlike_select($arr, $limit);
 		$line = mysql_fetch_array($data,MYSQL_ASSOC);
 		$items = explode(',', $line['items']);
-		return count($items);
+		return count(array_filter($items));
 	}
 	
 	function setUserInfo($uid,$data)

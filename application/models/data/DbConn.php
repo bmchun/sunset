@@ -65,7 +65,8 @@ class DbConn {
 		}
 		else
 			$str = 'SELECT * FROM `'.$table.'` ;';	
-		;return $str;
+		//echo $str;
+		return $str;
 	}
 
 	/*
@@ -92,13 +93,14 @@ class DbConn {
 			elseif(isset($limit) && isset($orderby))
 				$str = 'SELECT * FROM `'.$table.'` WHERE '.$string.' ORDER BY `'.$orderby.'` desc LIMIT '.$limit.';';
 			elseif(isset($limit) && isset($orderby))
-			$str = 'SELECT * FROM `'.$table.'` WHERE '.$string.' ORDER BY `'.$orderby.'` desc LIMIT '.$limit.';';
+				$str = 'SELECT * FROM `'.$table.'` WHERE '.$string.' ORDER BY `'.$orderby.'` desc LIMIT '.$limit.';';
+			elseif(isset($string))
+				$str = 'SELECT * FROM `'.$table.'  ORDER BY `'.$orderby.'` desc LIMIT '.$limit.';';
 			else
 				$str = 'SELECT * FROM `'.$table.'` WHERE '.$string.' ;';
 		}
 		else
 			$str = $str = 'SELECT * FROM `'.$table.'` ORDER BY '.$orderby.' LIMIT '.$limit.';';
-		//echo $str;
 		return $str;
 	}
 

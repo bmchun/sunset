@@ -11,7 +11,6 @@ class ItemInfo {
 	{
 		$str = DbConn::table_select('iteminfo',$arr,$limit);
 		$this->con = DbConn::initDb();
-		var_dump($str);exit;
 		return mysql_query($str,$this->con);
 	}
 	

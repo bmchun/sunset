@@ -35,5 +35,41 @@ class SubjectView{
 		}
 		return $data;
 	}
+	
+	function addSubject($name,$file,$url)
+	{
+		$arr = array('');
+		$su = new Subject();
+		$orderby = '`id` desc';
+		$limit =1;
+		$data = mysql_fetch_assoc($su->subject_select_ordby(null, $orderby, $limit));
+		$id = $data['id']+1;//取id号命名图片
+			$image_path  = $_SERVER['DOCUMENT_ROOT'].'/img/subject/';
+			$ext = explode('.', $file['subjectImage']['name']);
+			//取下一个插入的值
+			$file['subjectImage']['name'] = $id.'.'.$ext[1];
+			if ((($file['subjectImage']["type"] == "image/jpg")|| ($file['subjectImage']["type"] == "image/jpeg")|| ($file['subjectImage']["type"] == "image/pjpeg"))&& ($file['subjectImage']["size"] < 200000))
+			{
+				if ($file['subjectImage']["error"] > 0)
+				{
+					echo $file['subjectImage']["error"] . "<br />";
+				}
+				else
+				{
+					move_uploaded_file($file['subjectImage']["tmp_name"],$image_path.$file['subjectImage']["name"]);
+					$_SERVER['HTTP_ORIGIN'] = isset($_SERVER['HTTP_ORIGIN'])?$_SERVER['HTTP_ORIGIN']:'http://120.25.250.200/';
+					$image_url_path = $_SERVER['HTTP_ORIGIN'].'/img/subject/';
+					$set = array('subjectURL'=>$image_url_path.$file['subjectImage']["name"],
+										'subjectName' =>$name,
+										'subjectPic' =>$image_path.$file['subjectImage']['name'],
+										'subjectTime'=>date('Y-m-d h:i:s')
+							);
+					$status = $su->subject_insert($set);
+					return $status;
+				}
+			}
+			else
+				return 400;
+		}
 
 }

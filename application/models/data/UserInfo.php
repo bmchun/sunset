@@ -15,6 +15,13 @@ class UserInfo
 		$this->con = DbConn::initDb();
 		return mysql_query($str,$this->con);
 	}
+	
+	function userinfo_orderby_select($orderby,$limit)
+	{
+		$str = DbConn::table_select_ordby('userinfo',null,$orderby,$limit);
+		$this->con = DbConn::initDb();
+		return mysql_query($str,$this->con);
+	}
 
 	function userinfo_insert($arr)
 	{
@@ -30,7 +37,7 @@ class UserInfo
 		return mysql_query($str,$this->con);
 	}
 
-	function table_delete($condition)
+	function userinfo_delete($condition)
 	{
 		$str = DbConn::table_delete('userinfo',$condition);
 		$this->con = DbConn::initDb();
