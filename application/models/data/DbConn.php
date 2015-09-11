@@ -23,11 +23,22 @@ class DbConn {
 		*/
 		//define("ENV","Product");
 		$db_conf = parse_ini_file('db.ini',true);
-		$this->host = $db_conf['Product']['host'];
-		$this->port = $db_conf['Product']['port'];
-		$this->user = $db_conf['Product']['user'];
-		$this->passwd = $db_conf['Product']['password'];
-		$this->dbname = $db_conf['Product']['dbname'];
+		if($_SERVER['HTTP_HOST'] =='localhost')
+		{
+			$this->host = $db_conf['Dev']['host'];
+			$this->port = $db_conf['Dev']['port'];
+			$this->user = $db_conf['Dev']['user'];
+			$this->passwd = $db_conf['Dev']['password'];
+			$this->dbname = $db_conf['Dev']['dbname'];
+		}
+		else 
+		{
+			$this->host = $db_conf['Product']['host'];
+			$this->port = $db_conf['Product']['port'];
+			$this->user = $db_conf['Product']['user'];
+			$this->passwd = $db_conf['Product']['password'];
+			$this->dbname = $db_conf['Product']['dbname'];
+		}
 
 		try{
 			$con = mysql_connect($this->host.':'.$this->port,$this->user,$this->passwd);
