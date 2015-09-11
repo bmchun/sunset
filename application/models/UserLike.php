@@ -14,6 +14,8 @@ class UserLikeModel
 	
 	function checkUserLike($uid,$itemID)
 	{
+		if(0==$uid)
+			return "0";
 		$items = self::getUserItems($uid);
 		if(in_array($itemID, $items))
 			return "1";
