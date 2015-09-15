@@ -60,7 +60,7 @@ foreach($r['data']['userinfo'] as $key=>$value)
 						              <td>'.$tel.'</td>
 						              <td>'.$nickname.'</td>
 						              <td>'.$gender.'</td>
-						              <td>'.$image.'</td>
+						              <td><a href="'.$image.'" target="_blank">头像</a></td>
 						              <td>'.$provice.'</td>
 						              <td>'.$registerDate.'</td>
 						              <td>'.$platformName.'</td>
