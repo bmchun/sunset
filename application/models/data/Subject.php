@@ -52,7 +52,7 @@ class Subject {
 
 	function subject_delete($condition)
 	{
-		$str = DbConn::table_insert('subject',$condition);
+		$str = DbConn::table_delete('subject',$condition);
 		$this->con = DbConn::initDb();
 		return mysql_query($str,$this->con);
 	}

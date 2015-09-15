@@ -54,7 +54,7 @@ require_once 'header.php';
             <li><a href="?id=2"><span class="am-icon-pencil-square-o"></span> 商品</a></li>
             <li><a href="?id=3"><span class="am-icon-check"></span> 热词维护</a></li>
             <li><a href="?id=4"><span class="am-icon-calendar"></span> 用户信息</a></li>
-            <li><a href="admin-log.html"><span class="am-icon-puzzle-piece"></span> 第三方短信平台</a></li>
+            <li><a href="?id=5"><span class="am-icon-puzzle-piece"></span> 第三方短信平台</a></li>
             <!-- 
             <li><a href="admin-user.html" class="am-cf"><span class="am-icon-check"></span> 修改密码<span class="am-icon-star am-fr am-margin-right admin-icon-yellow"></span></a></li>
             <li><a href="admin-help.html"><span class="am-icon-puzzle-piece"></span> 帮助页</a></li>
@@ -92,11 +92,14 @@ require_once 'header.php';
 		case 2:	//商品管理
 			echo $items;
 			break;
-		case 3:	//商品管理
+		case 3:	//热词管理
 			echo $hotkey;
 			break;
 		case 4:	//用户信息管理
 			echo $userinfo;
+			break;
+		case 5: //第三方短信平台
+			echo 'didn`t Developed';
 			break;
 		default:
 				echo '<div class="am-cf am-padding">

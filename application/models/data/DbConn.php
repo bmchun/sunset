@@ -177,6 +177,17 @@ class DbConn {
 		return $str;
 	}
 
+	function table_insert_import($table,$conls,$values)
+	{
+		if(!empty($table)&&isset($conls)&&isset($values))
+		{
+			$str = 'INSERT INTO '.$table.' ('.$conls.')'.' VALUES '.$values;
+		}
+		else
+			throw new Exception("Insert table values is missing!", 1);
+		echo $str."\n";exit;
+		return $str;
+	}
 	/*
 	 	改表通用方法
 	 	$table 表名

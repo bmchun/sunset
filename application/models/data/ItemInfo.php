@@ -52,13 +52,20 @@ class ItemInfo {
 		return mysql_query($str,$this->con);
 	}
 
-	function iteminfo_insert($arr)
+	function iteminfo_insert($string)
 	{
-		$str = DbConn::table_insert('iteminfo',$arr);
+		$str = DbConn::table_insert('iteminfo',$string);
 		$this->con = DbConn::initDb();
 		return mysql_query($str,$this->con);
 	}
 
+	function iteminfo_import($cons,$values)
+	{
+		$str = DbConn::table_insert_import('iteminfo',$cons,$values);
+		$this->con = DbConn::initDb();
+		return mysql_query($str,$this->con);
+	}
+	
 	function iteminfo_update($arr,$condition)
 	{
 		$str = DbConn::table_update('iteminfo',$arr,$condition);
@@ -68,7 +75,7 @@ class ItemInfo {
 
 	function item_delete($condition)
 	{
-		$str = DbConn::table_insert('iteminfo',$condition);
+		$str = DbConn::table_delete('iteminfo',$condition);
 		$this->con = DbConn::initDb();
 		return mysql_query($str,$this->con);
 	}

@@ -32,6 +32,13 @@ class NewItems{
 	{
 		return  ItemInfo::itemInfo_count();
 	}
+	
+	function itemDel($id)
+	{
+		$su = new ItemInfo();
+		$condition = '`id`='.$id;
+		$r = $su->item_delete($condition);
+	}
 
 }
 

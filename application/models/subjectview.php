@@ -71,5 +71,13 @@ class SubjectView{
 			else
 				return 400;
 		}
+		
+		function delSubject($id)
+		{
+			$su = new Subject();
+			$condition = '`id`='.$id;
+			$r = $su->subject_delete($condition);
+			header('Location:'.$_SERVER['HTTP_REFERER']);
+		}
 
 }

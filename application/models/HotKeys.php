@@ -18,6 +18,26 @@ class HotKeys {
 		}
 		return $data;
 	}
+	
+	function hotkeyDel($id)
+	{
+		$con = '`id`= '.$id;
+		$re = KeyWord::keyword_delete($con);
+		return $re;
+	}
+	
+	function hotkeyAdd($key)
+	{
+		$arr = array('');
+		$su = new KeyWord();
+		$orderby = '`id` desc';
+		$limit =1;
+		$data = mysql_fetch_assoc($su->keyword_select_oderby($orderby));
+		$id = $data['id']+1;//取id号命名热词
+		$arr = array('id'=>$id,'keyword'=>$key);
+		$re = KeyWord::keyword_insert($arr);
+		return $re;
+	}
 }
 
 ?>

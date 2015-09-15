@@ -10,9 +10,6 @@ $userinfo = '<div class="admin-content">
 						      <div class="am-u-sm-12 am-u-md-6">
 						        <div class="am-btn-toolbar">
 						          <div class="am-btn-group am-btn-group-xs">
-						            <button type="button" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</button>
-						            <button type="button" class="am-btn am-btn-default"><span class="am-icon-save"></span> 保存</button>
-						            <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
 						          </div>
 						        </div>
 						      </div>
@@ -71,9 +68,7 @@ foreach($r['data']['userinfo'] as $key=>$value)
 						              <td>
 						                <div class="am-btn-toolbar">
 						                  <div class="am-btn-group am-btn-group-xs">
-						                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-						                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
-						                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+						              		<a href="../api/admin/userDel.php?id='.$value['uid'] .'">删除</a>
 						                  </div>
 						                </div>
 						              </td>

@@ -10,9 +10,23 @@ $hotkey = '<div class="admin-content">
 						      <div class="am-u-sm-12 am-u-md-6">
 						        <div class="am-btn-toolbar">
 						          <div class="am-btn-group am-btn-group-xs">
-						            <button type="button" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</button>
-						            <button type="button" class="am-btn am-btn-default"><span class="am-icon-save"></span> 保存</button>
-						            <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
+						            <button type="button" class="am-btn am-btn-success" id="hotkey"><span class="am-icon-plus"></span> 新增</button>
+						            <div class="am-modal am-modal-prompt" tabindex="-1" id="addhotkey">
+									  <div class="am-modal-dialog" align=center>
+											<div class="am-modal-bd" >
+											<form action="../api/admin/hotkeyAdd.php" enctype="multipart/form-data"  method="post">
+ 												 <div class="am-modal-hd" align=left>热词: <input type="text" name="key" /></div>
+  												<input type="submit" value="提交" />
+											</form>
+											</div>
+						<script>
+								$("#hotkey").on("click",function(){
+								  $("#addhotkey").modal({
+									});
+								});
+							</script>
+									  </div>
+									</div>
 						          </div>
 						        </div>
 						      </div>
@@ -49,10 +63,10 @@ foreach($r['data'] as $key=>$value)
 						              <td>
 						                <div class="am-btn-toolbar">
 						                  <div class="am-btn-group am-btn-group-xs">
-						                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-						                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
-						                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+											<div class="am-btn-group am-btn-group-xs">
+						                    <a href="../api/admin/hotkeyDel.php?id='.$value['id'] .'">删除</a>
 						                  </div>
+						              		</div>
 						                </div>
 						              </td>
 						            </tr>';

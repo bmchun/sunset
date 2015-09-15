@@ -1,6 +1,7 @@
 <?php
-require_once '../../models/subjectview.php';
-require_once '../../models/Response.php';
+error_reporting(0);
+require_once '../../../models/subjectview.php';
+require_once '../../../models/Response.php';
 
 $re = new Response();
 $name  = $_POST['subjectName'];
@@ -10,9 +11,9 @@ if(isset($name)&&isset($file)&isset($url))
 {
 	$a = new SubjectView();
 	if($a->addSubject($name, $file, $url))
-		$re->show(200);
+		header('Location:'.$_SERVER['HTTP_REFERER']);
 	else 
-		$re->show(400);
+		echo $re->show(400);
 }
 else
-	$re->show(400);
+	echo $re->show(400);

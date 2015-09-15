@@ -10,11 +10,26 @@ $items = '<div class="admin-content">
 						    <div class="am-g">
 						      <div class="am-u-sm-12 am-u-md-6">
 						        <div class="am-btn-toolbar">
-						          <div class="am-btn-group am-btn-group-xs">
-						            <button type="button" class="am-btn am-btn-default"><span class="am-icon-plus"></span> 新增</button>
-						            <button type="button" class="am-btn am-btn-default"><span class="am-icon-save"></span> 保存</button>
-						            <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
-						          </div>
+						        <div class="am-btn-group am-btn-group-xs">
+						            <button type="button" class="am-btn am-btn-success" id="item"><span class="am-icon-plus"></span> 导入</button>
+						            <div class="am-modal am-modal-prompt" tabindex="-1" id="creatItem">
+									  <div class="am-modal-dialog" align=left>
+											<div class="am-modal-bd" >
+											<form action="../api/admin/itemImport.php" enctype="multipart/form-data"  method="post">
+  												<div class="am-modal-hd" align=left> 导入文件: </br>
+												 <input type="file" name="subjectImage" /></div></br>
+  												<input type="submit" value="导入" />
+											</form>
+									<pre> 格式要求：商品ID | 性别 | 类型 | URL </pre>
+											</div>
+						<script>
+								$("#item").on("click",function(){
+								  $("#creatItem").modal({
+									});
+								});
+							</script>
+									  </div>
+									</div>
 						        </div>
 						      </div>
 						    </div>
@@ -62,9 +77,7 @@ foreach($data as $key=>$value)
 						              <td>
 						                <div class="am-btn-toolbar">
 						                  <div class="am-btn-group am-btn-group-xs">
-						                    <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-						                    <button class="am-btn am-btn-default am-btn-xs am-hide-sm-only"><span class="am-icon-copy"></span> 复制</button>
-						                    <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+						                    <a href="../api/admin/itemDel.php?id='.$value['id'] .'">删除</a>
 						                  </div>
 						                </div>
 						              </td>

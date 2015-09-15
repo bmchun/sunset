@@ -166,6 +166,13 @@ class UserProfile {
 		$re = new UserInfo();
 		return mysql_fetch_row($re->userinfo_insert($data));
 	}
+	
+	function delUser($id)
+	{
+		$condition = '`uid` = '.$id;
+		$re =new UserInfo();
+		return $re->userinfo_delete($condition);
+	}
 }
 
 ?>
