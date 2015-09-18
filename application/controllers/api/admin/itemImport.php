@@ -10,9 +10,9 @@ $des_name = time();
 $im = new ItemInfo();
 
 try {
-	//$r = move_uploaded_file($file['subjectImage']["tmp_name"],$des_path.$des_name);
-	//$fp = fopen($file['tmp_name'],'r');
-	$fp = fopen('/Users/bmc/Downloads/newitem.txt','r');
+	$r = move_uploaded_file($file['subjectImage']["tmp_name"],$des_path.$des_name);
+	$fp = fopen($file['tmp_name'],'r');
+	//$fp = fopen('/Users/bmc/Downloads/newitem.txt','r');
 	$data = array();
 	while(!feof($fp))
 	{
