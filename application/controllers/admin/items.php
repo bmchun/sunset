@@ -68,7 +68,7 @@ foreach($data as $key=>$value)
 	$h .= '<tr>
 						              <td><input type="checkbox" /></td>
 						              <td>'.$value['id'].'</td>
-						              <td>商品</td>
+						              <td>'.$value['describe'].'</td>
 						              <td><a href="'.$value['itemName'].'" target="_blank">链接</a></td>
 						              <td>'.$value['collectNum'].'</td>
 						              <td>'.$itemGender.'</td>
