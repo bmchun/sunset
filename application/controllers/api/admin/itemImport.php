@@ -14,7 +14,7 @@ try {
 	if(!$r)
 		exit;
 	$fp = fopen($des_path.$des_name,'r');
-	//$fp = fopen('/Users/bmc/Downloads/1234','r');
+	//$fp = fopen('/Users/bmc/Downloads/12345','r');
 	$data = array();
 	while(!feof($fp))
 	{
@@ -33,10 +33,11 @@ try {
 		array_walk($v, 'trim_arr');
 		$ln.= '(\'';
 		$ln.= join($v,'\',\'');
-		$ln.='\'),'."\n";
+		$ln.='\'),';
 	} 
-	$ln = trim($ln,',').';';
+	$ln = trim($ln,",").';';
 	$im->iteminfo_import($cons,$ln);
+	header('Location:'.$_SERVER['HTTP_REFERER']);
 } catch (Exception $e) {
 	print $e->getMessage();
 	header('Location:'.$_SERVER['HTTP_REFERER']);

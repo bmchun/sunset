@@ -63,7 +63,7 @@ class ItemInfo {
 	{
 		$str = DbConn::table_insert_import('iteminfo',$cons,$values);
 		$this->con = DbConn::initDb();
-		//echo $str;exit;	
+		echo $str;exit;	
 		return mysql_query($str,$this->con);
 	}
 	
