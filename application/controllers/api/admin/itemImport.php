@@ -26,14 +26,15 @@ try {
 			continue;
 		$data[]=$l;
 	}
-	$cons = '`id`,`itemGender`,`type`,`itemName`';
+	$cons = '`id`,`itemGender`,`type`,`itemName`,`itemDate`';
 	$ln = null;
 	foreach ($data as $k => $v)
 	{
+		$time = time();
 		array_walk($v, 'trim_arr');
 		$ln.= '(\'';
 		$ln.= join($v,'\',\'');
-		$ln.='\'),';
+		$ln.='\',\''.$time.'\'),';
 	} 
 	$ln = trim($ln,",").';';
 	$im->iteminfo_import($cons,$ln);
