@@ -11,15 +11,19 @@ $im = new ItemInfo();
 
 try {
 	$r = move_uploaded_file($file['subjectImage']["tmp_name"],$des_path.$des_name);
-	$fp = fopen($file['tmp_name'],'r');
-	//$fp = fopen('/Users/bmc/Downloads/newitem.txt','r');
+	if(!$r)
+		exit;
+	$fp = fopen($des_path.$des_name,'r');
+	//$fp = fopen('/Users/bmc/Downloads/1234','r');
 	$data = array();
 	while(!feof($fp))
 	{
 		$line = fgets($fp);
-		$l = explode("\t", $line);
+		$l = explode(" ", $line);
 		$l[1] = gender($l[1]);
 		$l[2] = type($l[2]);
+		if($l[0]==null)
+			continue;
 		$data[]=$l;
 	}
 	$cons = '`id`,`itemGender`,`type`,`itemName`';
