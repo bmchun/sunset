@@ -72,10 +72,12 @@ elseif(isset($_POST['uid'])&&isset($_POST['page']))//获取喜欢列表，分页
 	$page = $_POST['page']<0?1:$_POST['page'];
 	$arr = array('userid'=>$uid);
 	$re = mysql_fetch_assoc($ul->userlike_select($arr, 1));
+	$re['items'] = trim($re['items'],',');
 	$items_id_arr = explode(',', $re['items']);
 	$data = array();
 	$ii = new ItemInfo();
-	for($i=($page-1);$i<$page+4;$i++)
+	$it_num = 6;//一页几个
+	for($i=($page-1)*$it_num;$i<$page*$it_num;$i++)
 	{
 		if($items_id_arr[$i])
 		{

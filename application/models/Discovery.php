@@ -12,7 +12,7 @@ class Discovery{
 	//gender = 0  送妈妈
 	function presentForHuman($gender,$pageId = 1,$uid=0)
 	{
-		$itemsNum = 4; //控制次调用返回的数据数量
+		$itemsNum = 6; //控制次调用返回的数据数量
 		$from = $itemsNum * ($pageId - 1);
 		$to = $itemsNum;
 		$limit = ' '.$from.','.$to.' ';// 每页4条数据

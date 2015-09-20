@@ -59,9 +59,9 @@ class SubjectView{
 					move_uploaded_file($file['subjectImage']["tmp_name"],$image_path.$file['subjectImage']["name"]);
 					$_SERVER['HTTP_ORIGIN'] = isset($_SERVER['HTTP_ORIGIN'])?$_SERVER['HTTP_ORIGIN']:'http://120.25.250.200/';
 					$image_url_path = $_SERVER['HTTP_ORIGIN'].'/img/subject/';
-					$set = array('subjectURL'=>$image_url_path.$file['subjectImage']["name"],
+					$set = array('subjectURL'=>$url,
 										'subjectName' =>$name,
-										'subjectPic' =>$image_path.$file['subjectImage']['name'],
+										'subjectPic' =>$image_url_path.$file['subjectImage']["name"],
 										'subjectTime'=>date('Y-m-d h:i:s')
 							);
 					$status = $su->subject_insert($set);

@@ -12,8 +12,8 @@ class Search {
 	function search($key,$page,$uid)
 	{
 		$string = "`describe` LIKE '%$key%' ORDER BY `id`";
-		$limit = ($page-1)*4;
-		$limit .=',4';
+		$limit = ($page-1)*6;
+		$limit .=',6';
 		$re = new ItemInfo();
 		$data = $re->iteminfo_select_like($string, $limit);
 		return $data;
