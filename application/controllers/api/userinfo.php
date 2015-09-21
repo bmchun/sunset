@@ -2,6 +2,7 @@
 //用户基本信息接口
 require_once '../../models/Response.php';
 require_once '../..//models/UserProfile.php';
+require_once '../../models/UserProfile.php';
 $msg = new Response();
 $page = isset($_GET['page'])?$_GET['page']:null;
 if(isset($_GET['uid'])||$_GET['tel'])
@@ -18,6 +19,12 @@ if(isset($_GET['uid'])||$_GET['tel'])
 		else
 		{
 			$userinfo = $re->userinfo(null,$tel);
+			if(!isset($userinfo['nickname']))//首次手机注册用户，初始化名字为手机号
+			{
+				$data = array('nickname'=>$tel);
+				$condition = '`tel`='.$tel;
+				$re->updateUserInfo($data,$condition);
+			}
 			$parentpercent = $re->parentpercent($uid);//父母信息完成比例
 			$likeNum = $re->likeNum($uid);//收藏个数
 			$data = array('userinfo'=>$userinfo,

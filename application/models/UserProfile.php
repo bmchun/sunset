@@ -161,10 +161,16 @@ class UserProfile {
 		return count(array_filter($items));
 	}
 	
-	function setUserInfo($uid,$data)
+	function setUserInfo($data)
 	{
 		$re = new UserInfo();
 		return mysql_fetch_row($re->userinfo_insert($data));
+	}
+	
+	function updateUserInfo($data,$condition)
+	{
+		$re = new UserInfo();
+		return mysql_fetch_row($re->userinfo_update($data,$condition));
 	}
 	
 	function delUser($id)

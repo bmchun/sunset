@@ -3,7 +3,7 @@ require_once '../../models/upAddress.php';
 require_once '../../models/Response.php';
 require_once 'token.php';
 
-$debug = 1;//打印日志开关
+$debug = 0;//打印日志开关
 $fp = fopen('./log','a+');
 if($debug)
 {
