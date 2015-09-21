@@ -36,7 +36,7 @@ class Token_SMS
 		);
 		$data['nr'] ='暖暖的用户，您的验证码为'.$token.'，如非本人操作，请忽略本短信【暖暖购物】' ;
 		//$data['message'] =urlencode('尊敬的用户，您的验证码为'.$token.'【暖暖】') ;
-		//$status = self::postFn($data, $this->url.':'.$this->port.'/Service.asmx/sendsms');
+		$status = self::postFn($data, $this->url.':'.$this->port.'/Service.asmx/sendsms');
 		$status =0;//跳过短信环节；
 		$re = new Token();
 		$arr = array('tel'=>$this->mobile,'token'=>$token,'timeout'=>(time()+300));//失效时间为5分钟
@@ -47,7 +47,7 @@ class Token_SMS
 		else
 			$re->token_insert($arr);
 		if($status)
-			echo $reponse->json(200,$token,$token);
+			echo $reponse->show(200);
 			//echo $token;
 	}
 	function getToken($tel,$token)

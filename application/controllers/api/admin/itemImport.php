@@ -78,7 +78,7 @@ function  type($type)
 			return 4;
 		case '鞋帽配饰':
 			return 5;
-		case '运动服':
+		case '运动装':
 			return 6;
 		case '家居服':
 			return 7;

@@ -81,8 +81,7 @@ foreach($data as $key=>$value)
 						                <div class="am-btn-toolbar">
 						                  <div class="am-btn-group am-btn-group-xs">
 						            			<button type="button" class="am-btn am-btn-success" id="'.$value['id'].'"><span class="am-icon-plus"></span> 编辑</button>
-						            			
-						                    <a href="../api/admin/itemDel.php?id='.$value['id'] .'">删除</a>
+						                    <a href="../api/admin/itemDel.php?id='.$value['id'] .'"> 删除</a>
 						                  </div>
 						                </div>
 						              </td>
@@ -126,7 +125,7 @@ function  ex_type($type)
 		case 5:
 			return '鞋帽配饰';
 		case 6:
-			return '运动服';
+			return '运动装';
 		case 7:
 			return '家居服';
 		case 8:
