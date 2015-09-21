@@ -46,7 +46,7 @@ class Token_SMS
 			$re->token_update($arr, "tel=$this->mobile");
 		else
 			$re->token_insert($arr);
-		if($status)
+		if(!$status)
 			echo $reponse->show(200);
 			//echo $token;
 	}
