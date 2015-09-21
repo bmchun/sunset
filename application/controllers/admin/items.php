@@ -17,21 +17,22 @@ $items = '<div class="admin-content">
 											<div class="am-modal-bd" >
 											<form action="../api/admin/itemImport.php" enctype="multipart/form-data"  method="post">
   												<div class="am-modal-hd" align=left> 导入文件: </br>
-												 <input type="file" name="subjectImage" /></div></br>
+												 <input type="file" name="subjectImage" />
+									   </div></br>
   												<input type="submit" value="导入" />
 											</form>
-									<pre> 格式要求：商品ID | 性别 | 类型 | URL </pre>
-											</div>
-						<script>
-								$("#item").on("click",function(){
-								  $("#creatItem").modal({
-									});
-								});
-							</script>
-									  </div>
+											<pre> 格式要求：商品ID | 性别 | 类型 | URL </pre>
 									</div>
-						        </div>
-						      </div>
+									<script>
+											$("#item").on("click",function(){
+											  $("#creatItem").modal({
+												});
+											});
+										</script>
+							</div>
+						</div>
+					</div>
+					</div>
 						    </div>
 							<div class="am-g">
 						      <div class="am-u-sm-12">
@@ -40,12 +41,12 @@ $items = '<div class="admin-content">
 						            <thead>
 						              <tr>
 						                <th class="table-check"><input type="checkbox" /></th>
-										<th class="table-id">商品ID</th>
-										<th class="table-title">商品名称</th>
-										<th class="table-title">商品链接</th>
-										<th class="table-title">收藏数</th>
-										<th class="table-title">适合性别</th>
-										<th class="table-title">是否推荐</th>
+										<th class="table-id">ID</th>
+										<th class="table-title">名称</th>
+										<th class="table-title">类型</th>
+										<th class="table-title">性别</th>
+										<th class="table-title">置顶</th>
+										<th class="table-title">推荐</th>
 										<th class="table-date am-hide-sm-only">修改日期</th>
 										<th class="table-set">操作</th>
 						              </tr>
@@ -54,9 +55,9 @@ $items = '<div class="admin-content">
 //内容区
 $pageid = isset($_GET['pageid'])?$_GET['pageid']:1;
 if($_SERVER['HTTP_HOST']=='localhost')
-	$uri = 'http://localhost/sunset/application/controllers/api/newitems.php?page='.$pageid.'&itemNum=11';
+	$uri = 'http://localhost/sunset/application/controllers/api/newitems.php?page='.$pageid.'&itemNum=10';
 else
-	$uri = '120.25.250.200/application/controllers/api/newitems.php?page='.$pageid.'&itemNum=11';
+	$uri = '120.25.250.200/application/controllers/api/newitems.php?page='.$pageid.'&itemNum=10';
 $re = getFn($uri);
 $r = json_decode($re,TRUE);
 $data = $r['data'];
@@ -65,18 +66,22 @@ foreach($data as $key=>$value)
 {
 	$itemGender = $value['itemGender']==0?'女':'男';
 	$isRecommend = $value['isRecommend']==0?'否':'是';
+	$isTop = $value['isTop']==0?'否':'是';
+	$type = ex_type($value['type']);
 	$h .= '<tr>
 						              <td><input type="checkbox" /></td>
-						              <td>'.$value['id'].'</td>
-						              <td>'.$value['describe'].'</td>
-						              <td><a href="'.$value['itemName'].'" target="_blank">链接</a></td>
-						              <td>'.$value['collectNum'].'</td>
+						              <td><a href="'.$value['itemName'].'" target="_blank">'.$value['id'].'</a></td>
+						              <td>'.mb_substr($value['describe'],0,5,'utf-8').'</td>
+						              <td>'.$type.'</td>
 						              <td>'.$itemGender.'</td>
+						              <td>'.$isTop.'</td>
 						              <td>'.$isRecommend.'</td>
 						              <td class="am-hide-sm-only">'.$value['itemDate'].'</td>
 						              <td>
 						                <div class="am-btn-toolbar">
 						                  <div class="am-btn-group am-btn-group-xs">
+						            			<button type="button" class="am-btn am-btn-success" id="'.$value['id'].'"><span class="am-icon-plus"></span> 编辑</button>
+						            			
 						                    <a href="../api/admin/itemDel.php?id='.$value['id'] .'">删除</a>
 						                  </div>
 						                </div>
@@ -96,15 +101,48 @@ $items.='
   <div class="am-fr">
     <ul class="am-pagination">';
 $_GET['pageid'] = isset($_GET['pageid'])?$_GET['pageid']:1;
-for($i=1;$i<6;$i++)
+for($i=1;$i<11;$i++)
 {
 	if($i == $_GET['pageid']) $active = 'am-active';
 	else $active = '';
 	$items.= '<li class="'.$active.'"><a href="?id=2&pageid='.$i.'">'.$i.'</a></li>';
 }
-$items.='
+$items.='...'.'<li><a href="?id=2&pageid='.ceil($total_num/10).'">'.ceil($total_num/10).'</a></li>
     </ul>
   </div>
 </div>';
-
+function  ex_type($type)
+{
+	switch($type)
+	{
+		case 1:
+			return '外套';
+		case 2:
+			return '裙子';
+		case 3 :
+			return '上衣';
+		case 4:
+			return '裤子';
+		case 5:
+			return '鞋帽配饰';
+		case 6:
+			return '运动服';
+		case 7:
+			return '家居服';
+		case 8:
+			return '箱包';
+		case 9:
+			return '化妆品';
+		case 10:
+			return '保健品';
+		case 11:
+			return '食品';
+		case 12:
+			return '保健器械';
+		case 13:
+			return '生活用品';
+		default:
+			return 0;
+	}
+}
 ?>

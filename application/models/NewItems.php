@@ -39,6 +39,12 @@ class NewItems{
 		$condition = '`id`='.$id;
 		$r = $su->item_delete($condition);
 	}
+	function itemUpdate($id,$data=array())
+	{
+		$su = new ItemInfo();
+		$condition = '`id`='.$id;
+		$r = $su->iteminfo_update($data,$condition);
+	}
 
 }
 

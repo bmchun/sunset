@@ -15,11 +15,11 @@ class Discovery{
 		$itemsNum = 6; //控制次调用返回的数据数量
 		$from = $itemsNum * ($pageId - 1);
 		$to = $itemsNum;
-		$limit = ' '.$from.','.$to.' ';// 每页4条数据
+		$limit = ' '.$from.','.$to.' ';// 数据
 		$like = new UserLikeModel();
 		if($gender == NULL)
 		{
-			if(type==0)
+			if($type==0)
 				$arr = array("isRecommend"=>1);
 			else 
 				$arr = array("isRecommend"=>1,"type"=>$type);
@@ -34,7 +34,7 @@ class Discovery{
 			}
 			return $data;
 		}
-		if(type==0)
+		if($type==0)
 			$arr = array("isRecommend"=>1,"itemGender"=>$gender);
 		else
 			$arr = array("itemGender"=>$gender,'type'=>$type,"isRecommend"=>1);

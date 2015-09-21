@@ -16,7 +16,7 @@ class Token_SMS
 	function __set($uid,$mobile)
 	{
 		$this->uid = $uid ;
-		$this->url = 'http://114.113.101.250';
+		$this->url = 'http://219.142.105.9';
 		$this->port = '8087';
 		$this->id = 'nngwtest';
 		$this->pwd = '123123';
@@ -34,10 +34,10 @@ class Token_SMS
 				'extno'=>$this->product,
 				'hm'=>$this->mobile,
 		);
-		$data['nr'] ='【暖暖购物】'.$token.'（暖暖购物手机注册验证码，请完成验证），如非本人操作，请忽略本短信。' ;
+		$data['nr'] ='暖暖的用户，您的验证码为'.$token.'，如非本人操作，请忽略本短信【暖暖购物】' ;
 		//$data['message'] =urlencode('尊敬的用户，您的验证码为'.$token.'【暖暖】') ;
 		//$status = self::postFn($data, $this->url.':'.$this->port.'/Service.asmx/sendsms');
-		$status =1;//跳过短信环节；
+		$status =0;//跳过短信环节；
 		$re = new Token();
 		$arr = array('tel'=>$this->mobile,'token'=>$token,'timeout'=>(time()+300));//失效时间为5分钟
 		$arr_search = array('tel'=>$this->mobile);

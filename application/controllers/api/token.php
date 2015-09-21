@@ -31,10 +31,12 @@ function checkToken($tel,$token)
 }
 
 
-
-/* $obj = new Sms();
+/*
+$obj = new Sms();
  $tel = '15911122086';
 $uid = md5($tel);
 echo '<br />';
 $obj->__set($uid, $tel);
-print_r($obj->sendSMS()); */
+print_r($obj->sendSMS());
+
+ */

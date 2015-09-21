@@ -7,6 +7,7 @@ $style = new Response();
 $gender = isset($_GET['gender'])?$_GET['gender']:NULL;
 $pageId = isset($_GET['page'])?$_GET['page']:1;
 $uid = isset($_GET['uid'])?$_GET['uid']:1;
+$type = isset($_GET['type'])?$_GET['type']:1;
 $re = new Discovery();
-$data = $re->presentForHuman($gender,$pageId,$uid);
+$data = $re->presentForHuman($gender,$type,$pageId,$uid);
 echo $style->show('200',$data);

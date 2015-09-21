@@ -1,5 +1,4 @@
 <?php 
-//error_reporting(0);
 require_once('../../models/adminCheck.php');
 require_once 'subject.php';
 require_once 'items.php';
