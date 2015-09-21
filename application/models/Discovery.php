@@ -10,7 +10,7 @@ class Discovery{
     }
 	//gender = 1 送爸爸 
 	//gender = 0  送妈妈
-	function presentForHuman($gender,$pageId = 1,$uid=0)
+	function presentForHuman($gender,$type=0,$pageId = 1,$uid=0)
 	{
 		$itemsNum = 6; //控制次调用返回的数据数量
 		$from = $itemsNum * ($pageId - 1);
@@ -19,7 +19,10 @@ class Discovery{
 		$like = new UserLikeModel();
 		if($gender == NULL)
 		{
-			$arr = array("isRecommend"=>1);
+			if(type==0)
+				$arr = array("isRecommend"=>1);
+			else 
+				$arr = array("isRecommend"=>1,"type"=>$type);
 			$orderby = 'id';
 			$re = ItemInfo::iteminfo_select_ordby($arr,$orderby,$limit);
 			$data = array();
@@ -31,7 +34,10 @@ class Discovery{
 			}
 			return $data;
 		}
-		$arr = array("itemGender"=>$gender,"isRecommend"=>1);
+		if(type==0)
+			$arr = array("isRecommend"=>1,"itemGender"=>$gender);
+		else
+			$arr = array("itemGender"=>$gender,'type'=>$type,"isRecommend"=>1);
 		$orderby = 'itemDate';
 		$re = ItemInfo::iteminfo_select_ordby($arr,$orderby,$limit);
 
@@ -73,3 +79,4 @@ class Discovery{
 }
 
 ?>
+
