@@ -27,7 +27,10 @@ class UserLikeModel
 	{
 		$re = UserLike::userlike_sum($itemID);
 		$line = mysql_fetch_array($re);
-		$sum = $line[0];
+		$data = array('id'=>$itemID);
+		$re2 = mysql_fetch_array(ItemInfo::ItemInfo_select($data,1));
+		$water = $re2['stockNum'];//加水收藏
+		$sum = $line[0]+$water;
 		return $sum;
 	}
 }
