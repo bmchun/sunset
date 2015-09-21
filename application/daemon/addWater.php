@@ -9,6 +9,8 @@ $r = $obj->ItemInfo_select($arr, 1000);
 while($re = mysql_fetch_array($r))
 {
 	$id = $re['id'];	
+	if(isset($re['stockNum']))
+		continue;
 	$ids[$id]= rand(10, 50);
 }
 foreach ($ids as $id => $water)
