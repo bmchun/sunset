@@ -86,7 +86,7 @@ elseif(isset($_POST['uid'])&&isset($_POST['page']))//获取喜欢列表，分页
 			$tmp=mysql_fetch_assoc($ii->ItemInfo_select($arr_item, 1));
 			if($tmp==false)
 				continue;
-			$tmp['islike']=1;
+			$tmp['islike']="1";
 			$data[] = $tmp;
 			
 		}
