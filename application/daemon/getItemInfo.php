@@ -34,7 +34,8 @@ if(!is_null($re))
 							'itemPic'=>$value['pic_url'],
 							'itemDiscount' =>$value['price'],
 							'itemPrice' =>$value['reserve_price'],
-							'describe'=>$value['title']
+							'describe'=>$value['title'],
+							'end_time'=>$value['price_end_time']
 				);
 		$limit = 'id = '.$value['open_id'];
 		$items->iteminfo_update($arr,$limit);

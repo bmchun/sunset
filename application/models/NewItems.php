@@ -15,7 +15,7 @@ class NewItems{
 		$from = $itemsNum * ($pageId - 1);
 		$to = $itemsNum ;
 		$limit = ' '.$from.','.$to.' ';// 每页5条数据
-		$orderby = '`itemDate` desc';
+		$orderby = '`auto_id` desc';
 		$re = ItemInfo::iteminfo_select_ordby(NULL,$orderby,$limit);
 		$data = array();
 		$like = new UserLikeModel();

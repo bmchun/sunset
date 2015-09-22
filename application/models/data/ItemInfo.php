@@ -14,6 +14,7 @@ class ItemInfo {
 		return mysql_query($str,$this->con);
 	}
 	
+	
 	function itemInfo_count($arr=null)
 	{
 		$str = DbConn::table_select_count('iteminfo',$arr);
