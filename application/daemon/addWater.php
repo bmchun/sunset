@@ -1,6 +1,6 @@
 <?php
 error_reporting(0);
-require_once '../models/data/ItemInfo.php';
+require_once '/var/www/git/application/models/data/ItemInfo.php';
 
 $obj = new ItemInfo();
 $arr = array(); 

@@ -1,5 +1,5 @@
 <?php
-require_once '../models/data/ItemInfo.php';
+require_once '/var/www/git/application/models/data/ItemInfo.php';
 //获取商品信息为空的
 $items = new ItemInfo();
 $key = '`id`';
