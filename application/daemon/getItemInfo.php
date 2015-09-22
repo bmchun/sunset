@@ -3,8 +3,8 @@ require_once '/var/www/git/application/models/data/ItemInfo.php';
 //获取商品信息为空的
 $items = new ItemInfo();
 $key = '`id`';
-$string  = '`tb_id` is NULL';
-$limit =35;
+$string  = '`end_time` is NULL';
+$limit =50;
 $re = array();
 $result = $items->iteminfo_select_key($key,$string, $limit);
 while($r = mysql_fetch_array($result,true))
