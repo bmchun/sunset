@@ -114,8 +114,8 @@ class DbConn {
 				$str = 'SELECT * FROM `'.$table.'` WHERE '.$string.' ORDER BY `'.$orderby.'` desc LIMIT '.$limit.';';
 			elseif(isset($limit) && isset($orderby))
 				$str = 'SELECT * FROM `'.$table.'` WHERE '.$string.' ORDER BY `'.$orderby.'` desc LIMIT '.$limit.';';
-			elseif(isset($string))
-				$str = 'SELECT * FROM `'.$table.'  ORDER BY `'.$orderby.'` desc LIMIT '.$limit.';';
+			elseif(!isset($string))
+				$str = 'SELECT * FROM `'.$table.'`  ORDER BY `'.$orderby.'` desc LIMIT '.$limit.';';
 			else
 				$str = 'SELECT * FROM `'.$table.'` WHERE '.$string.' ;';
 		}

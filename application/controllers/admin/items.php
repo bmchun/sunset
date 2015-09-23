@@ -84,13 +84,16 @@ foreach($data as $key=>$value)
 			<div class="am-modal-dialog" align=left>
 				<div class="am-modal-bd" >
 					<form action="../api/admin/itemUpdate.php"  method="post">
-						<input type="text" name="id" value='.$value['id'].'></br>
+						<input type="text" name="auto_id"  readOnly="true" value='.$value['auto_id'].'>
+						<input type="text" name="id"  readOnly="true" value='.$value['id'].'></br>
 							商品链接<input type="text" name="itemName"  value='.$value['itemName'].'/></br>
-							商品名<input type="text" name="describe" value='.$value['describe'].'/></br>
+							商品名<input type="text" name="describe" value='.$value['describe'].' /></br>
 							商品类型 <select name="type" id="type" >
 								'.select($value['type']).'
 							</select>
-							商品性别<input type="text" name="itemGender" value='.$itemGender.' /></br>
+							商品性别<select name="itemGender" id="itemGender" >
+								'.gender($itemGender).'
+							</select>
 							置顶<select name="isTop" id="isTop" >
 								'.isTop($isTop).'
 							</select>
@@ -197,7 +200,29 @@ function isTop($status)
 		$str .= '<option value="1" >是</option>';
 		$str .= '<option value="0" selected="selected">否</option>';
 	}
-		
+	return $str;
+}
+
+function gender($gender)
+{
+	$str =null;
+	if($gender=='男')
+	{
+		$str .= '<option value="1" selected="selected">男</option>';
+		$str .= '<option value="0">女</option>';
+		$str .= '<option value="2">皆可</option>';
+	}
+	elseif($gender=='女')
+	{
+		$str .= '<option value="1" >男</option>';
+		$str .= '<option value="0" selected="selected">女</option>';
+		$str .= '<option value="2">皆可</option>';
+	}
+	else {
+		$str .= '<option value="1" >男</option>';
+		$str .= '<option value="0" >女</option>';
+		$str .= '<option value="2" selected="selected">皆可</option>';
+	}
 	return $str;
 }
 ?>
