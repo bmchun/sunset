@@ -1,4 +1,5 @@
 <?php
+var_dump($_POST);exit;
 error_reporting(0);
 require_once '../../../models/NewItems.php';
 $id = $_GET['id'];

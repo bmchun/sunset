@@ -18,11 +18,11 @@ $items = '<div class="admin-content">
 											<form action="../api/admin/itemImport.php" enctype="multipart/form-data"  method="post">
   												<div class="am-modal-hd" align=left> 导入文件: </br>
 												 <input type="file" name="subjectImage" />
-									   </div></br>
+									   			</div></br>
   												<input type="submit" value="导入" />
 											</form>
 											<pre> 格式要求：商品ID | 性别 | 类型 | URL </pre>
-									</div>
+										</div>
 									<script>
 											$("#item").on("click",function(){
 											  $("#creatItem").modal({
@@ -78,12 +78,38 @@ foreach($data as $key=>$value)
 						              <td>'.$isRecommend.'</td>
 						              <td class="am-hide-sm-only">'.$value['itemDate'].'</td>
 						              <td>
-						                <div class="am-btn-toolbar">
-						                  <div class="am-btn-group am-btn-group-xs">
-						            			<button type="button" class="am-btn am-btn-success" id="'.$value['id'].'"><span class="am-icon-plus"></span> 编辑</button>
-						                    <a href="../api/admin/itemDel.php?id='.$value['id'] .'"> 删除</a>
-						                  </div>
-						                </div>
+<div class="am-btn-toolbar">
+		<button type="button" class="am-btn am-btn-success" id="btn'.$value['id'].'"><span class="am-icon-plus"></span> 编辑</button>
+		<div class="am-modal am-modal-prompt am-modal-out" tabindex="-1" id="'.$value['id'].'">
+			<div class="am-modal-dialog" align=left>
+				<div class="am-modal-bd" >
+					<form action="../api/admin/itemUpdate.php"  method="post">
+						<input type="text" name="id" value='.$value['id'].'></br>
+							商品链接<input type="text" name="itemName"  value='.$value['itemName'].'/></br>
+							商品名<input type="text" name="describe" value='.$value['describe'].'/></br>
+							商品类型 <select name="type" id="type" >
+								'.select($value['type']).'
+							</select>
+							商品性别<input type="text" name="itemGender" value='.$itemGender.' /></br>
+							置顶<select name="isTop" id="isTop" >
+								'.isTop($isTop).'
+							</select>
+							推荐<select name="isRecommend" id="isRecommend" >
+								'.isTop($isRecommend).'
+						</select>
+		  				<input type="submit"  value="更新" />
+					</form>
+				</div>
+			</div>
+		</div>
+		<a href="../api/admin/itemDel.php?id='.$value['id'] .'"> 删除</a>	
+</div>
+<script>
+				$("#btn'.$value['id'].'").on("click",function(){
+	  			$("#'.$value['id'].'").modal({
+					});
+				});
+</script>				              		
 						              </td>
 						            </tr>';
 }
@@ -141,7 +167,37 @@ function  ex_type($type)
 		case 13:
 			return '生活用品';
 		default:
-			return 0;
+			return '其他';
 	}
+}
+
+function select($check)
+{
+	$str = null;
+	for($i=1;$i<15;$i++)
+	{
+		if($i==$check)
+			$str .= '<option value="'.$i.'" selected="selected">'.ex_type($i).' </option>';
+		else
+			$str .= '<option value="'.$i.'">'.ex_type($i).' </option>';
+	}
+	return $str;
+}
+
+function isTop($status)
+{
+	$str = null;
+	if($status=='是')
+	{
+		$str .= '<option value="1" selected="selected">是</option>';
+		$str .= '<option value="0">否</option>';
+	}
+	else
+	{
+		$str .= '<option value="1" >是</option>';
+		$str .= '<option value="0" selected="selected">否</option>';
+	}
+		
+	return $str;
 }
 ?>
