@@ -1,6 +1,6 @@
 <?php
-require_once '../../models/data/ItemInfo.php';
-//error_reporting(0);
+require_once '../../../models/data/ItemInfo.php';
+error_reporting(0);
 if(!isset($_FILES))
 	header('Location:'.$_SERVER['HTTP_REFERER']);
 
