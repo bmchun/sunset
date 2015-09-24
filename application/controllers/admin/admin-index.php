@@ -4,6 +4,7 @@ require_once 'subject.php';
 require_once 'items.php';
 require_once 'hotkey.php';
 require_once 'userinfo.php';
+require_once 'search.php';
 //var_dump($_POST);exit;
 require_once 'cookie.php';
 ck();
@@ -81,6 +82,8 @@ require_once 'header.php';
   <!-- content start -->
   <div class="admin-content">
 <?php
+if(isset($_GET['id']))
+{
 	$_GET['id'] = isset($_GET['id'])?$_GET['id']:null; 
 	$arr = array();
 	switch ($_GET['id'])
@@ -111,9 +114,12 @@ require_once 'header.php';
 						      <li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>在线用户<br/>3000</a></li>
 						    </ul>';
 	}
-	
-		
-		
+}
+if(isset($_GET['k']))
+{
+	$_GET['k'] = isset($_GET['k'])?$_GET['k']:null;
+	echo $content;
+}
 ?>
     
 
