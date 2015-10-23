@@ -34,13 +34,13 @@ if(isset($_POST['data']))
 		$r = $setUser->userinfo_select($checkArr, 1);
 		if(!mysql_fetch_assoc($r))
 		{
-			echo $res->show(403);exit;
+			echo $res->show(407);exit;
 		}
 		$re = $setUser->userinfo_update($arr, $condition);
 		if($re==1)
 			echo $res->show(200,mysql_fetch_assoc($setUser->userinfo_select($arr_select,1)));
 		else
-			echo $res->show(401);
+			echo $res->show(407);
 		exit;
 	}
 	//不存在的用户，新创建

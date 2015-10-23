@@ -12,7 +12,7 @@ if($_POST['uid']&&$_FILES)
 	if($im != 400)
 		echo $response->show(200,$im);
 	else
-		echo $response->show(400);
+		echo $response->show(407);
 }
 else
 	echo $response->show(400);

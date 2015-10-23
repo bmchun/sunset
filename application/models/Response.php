@@ -23,31 +23,37 @@ class Response{
     	switch ($code)
     	{
     		case 200:
-    			$message = 'Success';
+    			$message = '操作成功！';
     			break;
     		case 400:
-    			$message =  'Bad request';
+    			$message =  '操作异常，请重试！';
     			break;
     		case 401:
-    				$message =  'User already exist';
+    				$message =  '用户已存在！';
     				break;
     		case 402:
-    				$message =  'Token Failed';
+    				$message =  'Token错误或失效，请重试！';
     				break;
     		case 403:
-    				$message =  'Password error';
+    				$message =  '密码错误！';
     				break;
     		case 404:
-    			$message =  'Missing token';
+    			$message =  '缺失Token！';
     			break;
     		case 405:
-    			$message =  'User not exist';
+    			$message =  '用户不存在！';
+    			break;
+    		case 406:
+    			$message =  '用户名或密码错误！';
+    			break;
+    		case 407:
+    			$message =  '更新失败，请重试！';
     			break;
     		case 500:
-    			$message =  'Internal server error';
+    			$message =  '服务器内部错误';
     			break;
     		default:
-    			$message =  'Unknow Error';
+    			$message =  '未知错误！';
     	}
   
     if($type == 'json'){

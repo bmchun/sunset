@@ -15,7 +15,7 @@ if(isset($_GET['uid'])||$_GET['tel'])
 		$pwd =md5($_GET['password']);
 		$userinfo  = $re->checkAuth($tel, $pwd);//登录验证密码
 		if($userinfo ==FALSE)
-			echo $msg->show('400');
+			echo $msg->show('406');
 		else
 		{
 			$userinfo = $re->userinfo(null,$tel);

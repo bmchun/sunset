@@ -1,5 +1,7 @@
 <?php
+var_dump($_FILES);exit;
 require_once '../../../models/data/ItemInfo.php';
+
 error_reporting(0);
 if(!isset($_FILES))
 	header('Location:'.$_SERVER['HTTP_REFERER']);
@@ -19,6 +21,9 @@ try {
 	while(!feof($fp))
 	{
 		$line = fgets($fp);
+		$line= preg_replace('/\t{1,}/',' ',$line);//去掉多个tab制表位
+		$line = preg_replace('/\s{2,}/',' ',$line);//去掉多个空格
+		
 		$l = explode(" ", $line);
 		$l[1] = gender($l[1]);
 		$l[2] = type($l[2]);
