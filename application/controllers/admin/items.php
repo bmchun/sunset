@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 //商品维护
 require_once 'curl.php';
 require_once('../../models/NewItems.php');
@@ -57,7 +58,8 @@ $items = '<div class="admin-content">
 									<th class="table-set">操作</th>
 						        </tr>
 						    </thead>
-							<tbody>';
+							<tbody>
+							';
 //内容区
 $pageid = isset($_GET['pageid'])?$_GET['pageid']:1;
 if($_SERVER['HTTP_HOST']=='localhost')
@@ -66,7 +68,8 @@ else
 	$uri = '120.25.250.200/application/controllers/api/newitems.php?page='.$pageid.'&itemNum=50';
 $re = getFn($uri);
 $r = json_decode($re,TRUE);
-$data = $r['data'];
+$data = array_merge(array(0=>''), $r['data']);
+//var_dump($data);exit;
 $h= null;
 foreach($data as $key=>$value)
 {
