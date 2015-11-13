@@ -15,7 +15,7 @@ class NewItems{
 		$from = $itemsNum * ($pageId - 1);
 		$to = $itemsNum ;
 		$limit = ' '.$from.','.$to.' ';
-		$orderby = 'auto_id';
+		$orderby = 'itemDate';
 		$arr = array('isTop'=>0);
 		
 		//第一页加上置顶内容
