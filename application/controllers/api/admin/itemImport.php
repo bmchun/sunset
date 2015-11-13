@@ -35,7 +35,7 @@ try {
 	$ln = null;
 	foreach ($data as $k => $v)
 	{
-		$time = date("Y-m-d H:i:s");;
+		$time = time();;
 		array_walk($v, 'trim_arr');
 		$ln.= '(\'';
 		$ln.= join($v,'\',\'');

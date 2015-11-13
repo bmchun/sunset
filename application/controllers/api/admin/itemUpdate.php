@@ -10,12 +10,15 @@ $itemGender = $_POST['itemGender'];
 $type = $_POST['type'];
 $isTop = $_POST['isTop'];
 $isRecommend = $_POST['isRecommend'];
+$itemDate = time();
 $re = new NewItems();
-$data = array('itemName'=>$itemName,
-					  'describe' =>$describe,
-		'type'=>$type,
-		'isTop'=>$isTop,
-		'isRecommend'=>$isRecommend
+$data = array(
+		'itemName' => $itemName,
+		'describe' => $describe,
+		'type' => $type,
+		'isTop' => $isTop,
+		'isRecommend' => $isRecommend,
+		'itemDate' => $itemDate
 		);
 $re->itemUpdate($id,$data);
 header('Location:'.$_SERVER['HTTP_REFERER'].'?id=2');

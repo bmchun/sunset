@@ -23,7 +23,7 @@ class Discovery{
 				$arr = array("isRecommend"=>1);
 			else 
 				$arr = array("isRecommend"=>1,"type"=>$type);
-			$orderby = 'id';
+			$orderby = 'itemDate';
 			$re = ItemInfo::iteminfo_select_ordby($arr,$orderby,$limit);
 			$data = array();
 			while($line = mysql_fetch_array($re,MYSQL_ASSOC))
