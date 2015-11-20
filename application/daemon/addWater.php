@@ -1,16 +1,16 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 require_once '/var/www/git/application/models/data/ItemInfo.php';
 
 $obj = new ItemInfo();
-$arr = array(); 
+$arr = array(
+	'stockNum'=>0	
+); 
 $ids = array();
 $r = $obj->ItemInfo_select($arr, 1000);
 while($re = mysql_fetch_array($r))
 {
 	$id = $re['id'];	
-	if(isset($re['stockNum']))
-		continue;
 	$ids[$id]= rand(10, 50);
 }
 foreach ($ids as $id => $water)

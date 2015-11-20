@@ -29,7 +29,7 @@ class Search {
 	//搜索范围扩大，后台用
 	function search_admin($key,$type,$page)
 	{
-		$string = "`describe` LIKE '%$key%'  ||  `type` LIKE  '%$type%'ORDER BY `id`";
+			$string = "`id` LIKE '%$key%' || `describe` LIKE '%$key%' ORDER BY `id`";
 			$num =50;
 			$limit = ($page-1)*$num;
 			$limit .=','.$num;

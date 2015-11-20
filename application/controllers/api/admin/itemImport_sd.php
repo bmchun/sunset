@@ -2,29 +2,17 @@
 //var_dump($_FILES);exit;
 require_once '../../../models/data/ItemInfo.php';
 
-error_reporting(0);
-if(!isset($_FILES))
-	header('Location:'.$_SERVER['HTTP_REFERER']);
-
-$file = $_FILES;
-$des_path  = $_SERVER['DOCUMENT_ROOT'].'/upload/';
-$des_name = time();
 $im = new ItemInfo();
 
 try {
-	$r = move_uploaded_file($file['subjectImage']["tmp_name"],$des_path.$des_name);
-	if(!$r)
-		exit;
-	$fp = fopen($des_path.$des_name,'r');
-	//$fp = fopen('/Users/bmc/Downloads/12345','r');
+	$fp = fopen('/Users/bmc/Downloads/12345','r');
 	$data = array();
 	while(!feof($fp))
 	{
 		$line = fgets($fp);
 		$line= preg_replace('/\t{1,}/',' ',$line);//去掉多个tab制表位
-		$line = preg_replace('/\s{2,}/',' ',$line);//去掉多个空格
-		
-		$l = explode(" ", $line);
+		$line = preg_replace('/\s{1,}/',' ',$line);//去掉多个空格
+		$l = explode("\t", $line);
 		$l[1] = gender($l[1]);
 		$l[2] = type($l[2]);
 		if($l[0]==null)
