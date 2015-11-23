@@ -1,11 +1,19 @@
 <?php
 //var_dump($_FILES);exit;
 require_once '../../../models/data/ItemInfo.php';
+if(!isset($_FILES))
+	header('Location:'.$_SERVER['HTTP_REFERER']);
 
+$file = $_FILES;
+$des_path  = $_SERVER['DOCUMENT_ROOT'].'/upload/';
+$des_name = time();
 $im = new ItemInfo();
 
 try {
-	$fp = fopen('/Users/bmc/Downloads/12345','r');
+	$r = move_uploaded_file($file['subjectImage']["tmp_name"],$des_path.$des_name);
+	if(!$r)
+		exit;
+	$fp = fopen($des_path,'r');
 	$data = array();
 	while(!feof($fp))
 	{

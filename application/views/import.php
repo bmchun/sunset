@@ -1,22 +1,11 @@
 <?php
-//var_dump($_FILES,$_SERVER['HTTP_REFERER']);exit;
-require_once '../../../models/data/ItemInfo.php';
+require_once '../models/data/ItemInfo.php';
 
-error_reporting(0);
-if(!isset($_FILES))
-	header('Location:'.$_SERVER['HTTP_REFERER']);
-
-$file = $_FILES;
-$des_path  = $_SERVER['DOCUMENT_ROOT'].'/upload/';
 $des_name = time();
 $im = new ItemInfo();
 
 try {
-	$r = move_uploaded_file($file['subjectImage']["tmp_name"],$des_path.$des_name);
-	if(!$r)
-		exit;
-	$fp = fopen($des_path.$des_name,'r');
-	//$fp = fopen('/Users/bmc/Downloads/12345','r');
+	$fp = fopen('./12345','r');
 	$data = array();
 	while(!feof($fp))
 	{
@@ -43,7 +32,6 @@ try {
 	} 
 	$ln = trim($ln,",").';';
 	$im->iteminfo_import($cons,$ln);
-	var_dump($_SERVER['HTTP_REFERER']);exit;
 	header('Location:'.$_SERVER['HTTP_REFERER']);
 } catch (Exception $e) {
 	print $e->getMessage();
