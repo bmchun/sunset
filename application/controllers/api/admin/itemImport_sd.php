@@ -1,5 +1,4 @@
 <?php
-//var_dump($_FILES);exit;
 require_once '../../../models/data/ItemInfo.php';
 if(!isset($_FILES))
 	header('Location:'.$_SERVER['HTTP_REFERER']);
@@ -13,14 +12,16 @@ try {
 	$r = move_uploaded_file($file['subjectImage']["tmp_name"],$des_path.$des_name);
 	if(!$r)
 		exit;
-	$fp = fopen($des_path,'r');
+	$fp = fopen($des_path.$des_name,'r');
 	$data = array();
 	while(!feof($fp))
 	{
 		$line = fgets($fp);
+		$line = iconv("gb2312","UTF-8",$line);//中文转码
 		$line= preg_replace('/\t{1,}/',' ',$line);//去掉多个tab制表位
 		$line = preg_replace('/\s{1,}/',' ',$line);//去掉多个空格
-		$l = explode("\t", $line);
+		$line = trim($line);
+		$l = explode(" ", $line);
 		$l[1] = gender($l[1]);
 		$l[2] = type($l[2]);
 		if($l[0]==null)
@@ -39,10 +40,10 @@ try {
 	} 
 	$ln = trim($ln,",").';';
 	$im->iteminfo_import($cons,$ln);
-	header('Location:'.$_SERVER['HTTP_REFERER']);
+	header("Location:".'http://120.25.250.200/application/controllers/admin/admin-index.php?id=2');
 } catch (Exception $e) {
 	print $e->getMessage();
-	header('Location:'.$_SERVER['HTTP_REFERER']);
+	header("Location:".'http://120.25.250.200/application/controllers/admin/admin-index.php?id=2');
 }
 
 function trim_arr(&$value)

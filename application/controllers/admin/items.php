@@ -13,7 +13,7 @@ $items = '<div class="admin-content">
 					<div class="am-u-sm-12 am-u-md-6">
 						<div class="am-btn-toolbar">
 						 	<div class="am-btn-group am-btn-group-xs">
-						    	<button type="button" class="am-btn am-btn-success" id="item" onclick="window.location=\'http://localhost/sunset/application/controllers/admin/itemimport.php\'"><span class="am-icon-plus"></span> 导入</button>
+						    	<button type="button" class="am-btn am-btn-success" id="item" onclick="window.location=\'http://120.25.250.200/application/controllers/admin/itemimport.php\'"><span class="am-icon-plus"></span> 导入</button>
 							<div class="am-u-sm-12 am-u-md-3">
 								<form>
           							<input type="text" class="am-form-field" style = "width:100px" name="k">

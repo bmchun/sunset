@@ -43,7 +43,7 @@ try {
 	} 
 	$ln = trim($ln,",").';';
 	$im->iteminfo_import($cons,$ln);
-	var_dump($_SERVER['HTTP_REFERER']);exit;
+//	var_dump($_SERVER['HTTP_REFERER']);exit;
 	header('Location:'.$_SERVER['HTTP_REFERER']);
 } catch (Exception $e) {
 	print $e->getMessage();
