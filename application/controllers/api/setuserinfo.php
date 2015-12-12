@@ -29,6 +29,7 @@ if(isset($_POST['data']))
 		$arr['age']=isset($arr['age'])?$arr['age']:0;
 		$arr['idCard']=isset($arr['idCard'])?$arr['idCard']:'';
 		$arr['realName']=isset($arr['realName'])?$arr['realName']:'';
+		$arr['birthDate']=isset($arr['birthDate'])?$arr['birthDate']:'';
 		$checkArr = array('uid'=>$arr['uid']);
 		//更新个人信息
 		$r = $setUser->userinfo_select($checkArr, 1);

@@ -36,7 +36,7 @@ class ParentInfo
 	{
 		$str = DbConn::table_update('parentinfo',$arr,$condition);
 		$this->con = DbConn::initDb();
-		echo $str;
+		//echo $str;
 		return mysql_query($str,$this->con);
 	}
 

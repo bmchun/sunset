@@ -18,8 +18,5 @@ $result = $client->push()
 ->setOptions(M\options(123456, null, null, true, 60))
 ->setNotification(M\notification(M\ios($msg, 'happy', 1, true)))
 ->send();
-echo 'Push Success.' . $br;
-echo 'sendno : ' . $result->sendno . $br;
-echo 'msg_id : ' .$result->msg_id . $br;
-echo 'Response JSON : ' . $result->json . $br;
+header('Location:'.$_SERVER['HTTP_REFERER']);
 ?>
